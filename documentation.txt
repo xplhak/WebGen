@@ -1,0 +1,39 @@
+//// ******************************************************************************************
+//// ******************************************************************************************
+//   ******* Stranka zjistuje jakym jazykem ma dialog probihat ********************************
+//
+//   *** Promenne:
+//   ***   $_SESSION['step_all_1']['language'] - nacteny jazyk, ktery se nasledne uklada do ***
+//   ***      promenne $language **************************************************************
+
+//
+//   *** Funkce:
+//   ***   Echo - zmeni se hodnota odesilaneho tlacitka pro vybrany jazyk *********************
+//   ***   Pocatecni nacteni jazyka - na zacatku se nacte preferovany jazyk prohlizece a podle*
+//   ***     toho se urci jazyk prvni promluvy. Vybrat si uzivatel ale muze libovolny *********
+//// ******************************************************************************************
+//// ******************************************************************************************
+
+
+    //// ******************************************************************************************
+//// ******************************************************************************************
+//   ******* Stranka zjistuje jestli se uzivetel bude registrovat nebo jestli *****************
+//   ******* uz je v systemu zaregistrovan. Dale se zadava heslo pro overeni identity *********
+//
+//   *** Promenne:
+//   ***   $_SESSION['step_all_2']['user_account'] - muze nabyvat hodnot 'enrolment' uzivatel *
+//   ***      je jiz zadan nebo registration (uzivatel se registruje) *************************
+//   ***   $_SESSION['step_all_2']['user_name'] - jmeno uzivatele *****************************
+//   ***   $_SESSION['step_all_2']['user_pass'] - zadane heslo (prozatim pevna hodnota) *******
+//   ***   $_SESSION['step_all_2']['user_pass_rep'] - zopakovani hesla (pouze pri registraci) *
+//
+//   *** Funkce:
+//   ***   Echo - zopakuje se jak vyber (prihlaseni, registrace), tak uzivetelske jmeno. Hesla
+//   ***     se z bezpecnostnich duvodu neopakuji.
+//   ***   Kontrola uzivatele - kontroluje se, zda je pro uzivatele jiz vytvoren adresar ******
+//   ***     (pokud se prihlasuje), pripadne zda jiz neni vytvoren stejny adresar, pokud se ***
+//   ***     uzivatel snazi zaregistrovat (vse pomoci AJAX, aby uzivatel hned vedel, co se deje
+//   ***   Kontrola po odeslani - kontroluje se, zda login ma alespon jeden znak, zda splnuje *
+//   ***     vyse uvedene podminky ************************************************************
+//// ******************************************************************************************
+//// ******************************************************************************************

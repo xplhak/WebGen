@@ -1,0 +1,198 @@
+/*
+    Copyright (c) 2009 Fedor Tiršel
+
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation
+    files (the "Software"), to deal in the Software without
+    restriction, including without limitation the rights to use,
+    copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following
+    conditions:
+    
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+html {
+    height: 100%;
+    font-family: "Arial", sans-serif;
+    font-size: 1em;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background: url('../img/bg_html.png');
+}
+
+    body#webgen {
+        width: 880px;
+        min-height: 80%;
+        font-size: 0.9em;
+        margin: 20px auto !important;
+        padding: 40px;
+        -moz-border-radius: 20px;
+        border: 2px solid #36575F;
+        background: #F0F7F7 url('../img/bg_body.png') left bottom no-repeat;
+    }
+
+h1 {
+    margin-top: 0px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #36575F;
+}
+
+h2 {
+    color: #FFFFFF;
+    font-size: 1em;
+    padding: 10px 15px;
+    
+}
+
+    h2.error {
+        border: 1px solid #910000;
+        background-color: #DF0000;
+    }
+    
+    h2.ok {
+        border: 1px solid #00DF00;
+        background-color: #00DF00;
+    }
+
+ul  {
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+    li {
+        margin: 5px 0px 10px 0px;
+    }
+
+    ul.clear ul {
+        margin: 0px 0px 0px 20px;
+    }
+
+    ul.clear label {
+        display: block;
+    }
+
+    ul.clear li.checkbox label {
+        display: inline !important;
+    }
+
+    ul.clear input {
+        width: 350px;
+    }
+
+    ul.clear li.checkbox input,
+    input[type=radio],
+    input[type=checkbox] {
+        width: auto !important;
+    }
+    
+
+
+    input[readonly] {
+        background-color: #D3D3D3;
+    }
+    
+    ul.http_err {
+        list-style-type: disc;
+    }
+    
+    li.http_err {
+        margin: 15px 0px 0px 50px;
+    }
+
+input#submit_button {
+    color: #FFFFFF;
+    font: 1.1em bold "Tahoma";
+    padding: 5px;
+    background-color: #006200;
+}
+
+.red {
+    color: #DF0000;
+}
+
+span {
+    display: block;
+    margin-bottom: 5px;
+    font-style: italic;    
+}
+
+    span.red {
+        color: #DF0000;
+    }
+
+    span.normal_span {}
+    
+    span.hours_label, span.span_university_project_info, span.coauthor_info, span.direction_label, span.workload_label, span.hobbies_label, span.knowledges_label, span.education_info, span.work_info, span.lang_info, span.links_label, span.que_label {
+        display: inline;
+        font-style:normal
+        
+    }
+    
+    span#span_submit_button_info, span.span_next_project_button_info, span.span_next_edu_button_info, span.span_next_work_button_info, span.span_next_lang_button_info, span.span_next_tf_button_info {
+        /*display: inline;*/
+        display: none;
+        font-style:normal
+    }
+
+.hidden {
+    display: none;
+}
+
+p {
+    margin: 5px 0px 10px 0px;
+}
+
+.h1_error_prompt {
+    color: red;
+}
+
+textarea {
+    vertical-align: text-top;
+}
+
+/*
+#span_submit_button_info {
+    position: absolute;
+    top: -1024px;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+*/
+
+.pack_info  {
+    position: absolute;
+    top: -1024px;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* CSS styl pro skrytí textu pro vidící uživatele, ale ne pro odečítače 
+obrazovky:
+
+.hidden {
+    position: absolute;
+    top: -1024px;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+*/

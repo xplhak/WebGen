@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<presentation lastModified="02. 11. 2009" author="jarek" presentationName="bananova" presentationFullName="banánová" presentationType="pp" xsi:noNamespaceSchemaLocation="c:\web\WWW\local\xml\scheme\webgen.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<style>
+		<language>czech</language>
+		<css>petr.css</css>
+		<xsl>private_page.xslt</xsl>
+	</style>
+
+	<personalPageData>
+		<person>
+			<fullName>Jaromír Plhák</fullName>
+		</person>
+		<applications>
+			<poll>
+				<question>co je v lese</question>
+				<answers>
+					<answer>kočka</answer>
+					<answer>pes</answer>
+					<answer>divočák</answer>
+					<answer>krtek</answer>
+				</answers>
+			</poll>
+		</applications>
+	</personalPageData>
+</presentation>

@@ -1,0 +1,240 @@
+/*
+    Copyright (c) 2009 Jan Váňa
+
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation
+    files (the "Software"), to deal in the Software without
+    restriction, including without limitation the rights to use,
+    copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following
+    conditions:
+    
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+ {
+margin: 0px;
+padding: 0px;
+}
+
+body   
+{
+background-color:#2a3b4d;
+font-family:Times;
+font-size:16px;
+color:#000000;
+text-align:center;
+} 
+
+      
+a:link {color:#000; text-decoration:underline; font-size:16px;}
+a:active {color:#000; text-decoration:underline; font-size:16px;}
+a:visited {color:#000;text-decoration:underline; font-size:16px;}
+a:hover {color:#0000FF; text-decoration:none; font-size:16px; cursor: pointer;}
+
+#header {
+margin: 0em auto;
+width:720px;
+height:180px;
+background-color:#FFFFFF; 
+text-align:left;
+}
+
+.content{
+background-color:#99CCFF; 
+width:680px;
+margin:20px 20px 20px 20px;
+height:140px;
+position:absolute;
+}
+
+#main
+{
+margin: 0 auto 0;
+width:720px;
+background-color:#FFFFFF; 
+border-top:solid 12px white;
+position:relative;
+}
+
+#img_main_photo
+{
+display: none;
+float:left;
+height:120px;
+margin:10px 20px 10px 10px;
+}
+
+#heading {font-size: 30px;margin: 25px 0 0 15px;vertical-align:middle;}
+
+#contact_information, #university_information, #hobbies, #knowledges, #company_information, #birth_information
+{
+text-align:left;
+background-color:#DAD8FA; 
+margin-left:20px;
+margin-right:20px;
+margin-bottom:0px;
+margin-top: 12px; 
+border-style:solid;
+border-width:2px;
+border-color:#000000;
+padding: 0px 10px 0px 10px;
+}
+
+.dl_university_projects{
+text-align:justify;
+background-color:#DAD8FA; 
+margin-left:20px;
+margin-right:20px;
+margin-bottom:12px;
+margin-top: 0px; 
+padding: 0px 10px 10px 10px;
+}
+
+#center {
+padding-bottom: 15px; 
+margin:0 0 15px 200px;
+width: 520px;}
+
+#center dt{
+	font-weight:bold;
+	margin:0;
+	padding-right: 10px;
+	float:left;
+	display:block;
+}
+
+#center dd{
+	margin:5px;
+}
+
+#sidebar-right {
+	width:150px;
+	margin-left:35px;
+	position:absolute;
+	top:20px;
+	text-align:center;
+}
+
+#sidebar-right #links {
+	width:100%;
+	text-align:left;
+	/*margin:5px 0 15px 0;*/
+}
+
+#sidebar-right #links ul{
+	margin:0 20px 0 5px;
+	padding:0;
+	width:140px;
+}
+
+#sidebar-right #links ul li {
+	text-align:left;
+	list-style:none;
+	margin-bottom:10px;
+	width:100%;
+	border:solid #000000 1px;
+}
+
+
+#sidebar-right #links ul li a {
+	text-decoration:underline;
+	color:#055AF4;
+	font-size:80%;
+	margin-left: 15px;
+}
+
+.img_link{
+width:80px;
+display:block;
+vertical-align:top;
+margin: 0 30px 0 30px;
+}
+
+#sidebar-right #links ul li a:hover {
+	color:#73A3FA;
+}
+
+#menu {
+list-style:none;
+margin-left: 15px;
+}
+
+#img_gate_photo {
+width: 450px;
+}
+
+#gate_photo {
+text-align:center;
+margin: 25px 0px 25px 0;
+}
+
+#footer
+{
+margin: 0em auto;
+width:680px;
+background-color:#99CCFF; 
+margin: 0 auto;
+text-align:center;
+display:block;
+line-height:30px;
+border-bottom: solid white 20px;
+border-top: solid white 20px;
+border-left: solid white 20px;
+border-right: solid white 20px;
+position:relative;
+}
+
+.right_text_img {
+    float: left;
+    margin-right: 10px;
+    max-width: 250px;
+}
+
+.right_text_p {
+    text-align: justify;
+}
+
+.left_text_img {
+    float: right;
+    margin-left: 10px;
+    max-width: 250px;
+}
+
+.left_text_p {
+    text-align: justify;
+}
+
+.left_text {
+margin: 10px 20px 0 20px;
+text-align:left;
+}
+
+.right_text {
+margin: 10px 20px 0 20px;
+    text-align:right;
+}
+
+hr {background-color:gray;height:3px;margin: 20px 20px 0 20px;}
+
+#weather {
+    margin-left: -20px;
+}
+
+#cv {
+    text-align:left;
+    width: 250px;
+
+
+}

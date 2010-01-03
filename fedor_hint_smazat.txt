@@ -1,0 +1,45 @@
+$('span.ahoj', $('input.ahoj').closest('div')).text('fghjghj');
+
+
+
+
+
+From: Fedor Tir‹el <fedor.tirsel@gmail.com> ulo◊it adresu
+Date: Mon, 21 Sep 2009 21:42:31 +0200
+To: Jarom›r Plhﬂk <60773@mail.muni.cz>
+Subject: JS onChange
+
+Jarku,
+
+posielam slubeny kod:
+
+/* form inputs modify */
+$('input').each(function() {
+     $(this).attr('rel', $(this).val());
+
+     // obsluha "paste" eventu pre IE a Mozilla
+     if ($.browser.msie) {
+         this.onpaste = function() { setTimeout(function () {
+             checkValue($(this)); }, 1); };
+     } else if ($.browser.mozilla) {
+         this.addEventListener('input', function () {
+             checkValue($(this)); }, false);
+     }
+});
+
+$('input').bind('change keyup', function() {
+     checkValue($(this));
+});
+
+/* check modification of input value */
+function checkValue(el) {
+     if (el.val() == el.attr('rel')) {
+         el.removeClass('modified').addClass('not-modified');
+     } else {
+         el.removeClass('not-modified').addClass('modified');
+     }
+}
+
+S pozdravom...
+-- 
+Fedor Tirsel

@@ -1,0 +1,252 @@
+/*
+    Copyright (c) 2009 Radek Jurný
+
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation
+    files (the "Software"), to deal in the Software without
+    restriction, including without limitation the rights to use,
+    copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following
+    conditions:
+    
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+* { 
+  padding: 0; 
+  margin: 0; 
+}
+
+a { 
+ color: #3366FF; 
+ text-decoration: underline; 
+} 
+ 
+a:hover { 
+  color: #3366FF; 
+  text-decoration: none; 
+}
+
+body { 
+  background-color: yellow; 
+  font-family: Arial, Helvetica, sans-serif;
+  background: #FFFFFF url("img/background.jpg") repeat-x; 
+}
+
+#header { 
+  width: 960px; 
+  margin: 16px auto 0px auto; 
+  background-color: white; 
+  overflow: hidden; 
+  border-top: 3px solid #3366FF; 
+  border-left: 3px solid #3366FF; 
+  border-right: 3px solid #3366FF;  
+}
+
+#header #img_main_photo { 
+  float: right; 
+  width: 224px;
+  height: 224px;  
+  margin: 8px;  
+  border: 3px solid #3366FF;
+}
+
+#header #heading { 
+  padding-top: 100px;  
+}
+
+#header .content ul {	
+	width: 600px;
+}
+
+#header .content ul li {
+	display: inline;
+	padding-top: 78px;
+	margin: 2px 5px 0 5px;
+	float: left;	
+}
+
+#header .content ul li a {
+	display: inline;
+	padding: 6px  5px 5px 5px;
+	font-weight: bold;
+	text-decoration: none;
+	height: 30px;
+	color: #3366FF;
+	text-decoration: underline;
+}
+
+#header .content ul li a:hover, #header .content ul li a:active, #header .content ul li a.active {  
+  color: #3366FF;	 
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#main { 
+  width: 960px; 
+  margin: 0px auto 0px auto;  
+  border-top: 1px solid #3366FF;
+  border-left: 3px solid #3366FF; 
+  border-right: 3px solid #3366FF;
+  border-bottom: 3px solid #3366FF;
+  background-color: white; 
+}
+
+#center { 
+  width: 699px;
+  float: left; 
+  background-color: white;
+  padding: 8px;
+  border-right: 1px solid #3366FF;
+}
+
+h1 { margin-left: 8px;  }
+
+h2 { 
+  margin-top: 12px;
+  margin-bottom: 12px;   
+}
+
+h3 {
+  margin-top: 12px;
+  margin-bottom: 12px; 
+}
+
+/* kontaktni informace */
+#contact_information #dl_contact dt {   
+  font-weight: bold;	
+	padding-right: 10px;	
+}
+	
+#contact_information #dl_contact dd { 
+  padding-left: 20px;
+  margin: 5px; 
+}
+
+/* informace o studiu */
+#university_information dl dt {   
+  font-weight: bold;	
+	padding-right: 10px;	
+}
+	
+#university_information dl dd { 
+  padding-left: 20px;
+  margin: 5px; 
+}
+
+/* informace o práci */
+#company_information #dl_company dt {  
+  font-weight: bold;	
+	padding-right: 10px;	
+}
+
+#company_information #dl_company dd {
+  padding-left: 20px;
+  margin: 5px; 
+}
+
+#ul_hobbies { margin-left: 28px; }
+
+#ul_knowledges { margin-left: 28px; } 
+
+#birth_information #dl_birth dt {  
+  font-weight: bold;	
+	padding-right: 10px;	
+}
+
+#birth_information #dl_birth dd {
+  padding-left: 20px; 
+  margin: 5px; 
+}
+
+/* pro miniblogy */
+.left_text { margin-top: 8px; margin-bottom: 8px; }
+.left_text img { float: right; }
+.left_text .left_text_p { text-align: justify; }
+.right_text { margin-top: 8px; margin-bottom: 8px; }
+.right_text img { float: left; }
+.right_text .right_text_p { text-align: justify; }
+
+#img_gate_photo {
+  width: 450px;
+}
+
+#gate_photo {
+  text-align : center;  
+}
+
+#sidebar-right { 
+  width: 236px; 
+  float: right; 
+  background-color: white; 
+  text-align: center;
+  padding: 4px;
+}
+
+#sidebar-right #links {
+	width: 100%;
+	text-align: left;
+	margin: 5px 0 15px 0;
+}
+
+#sidebar-right #links ul {
+	margin: 0 20px 0 5px;	
+	width: 100%;
+}
+
+#sidebar-right #links ul li {
+	text-align: left;
+	list-style: none;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+
+#sidebar-right #links ul li a {
+	text-decoration: underline;
+	color: #3366FF;
+}
+
+#sidebar-right #links ul li a:hover {
+	text-decoration: none;
+	color: #3366FF;
+}
+
+#sidebar-right #calendar img, #sidebar-right #quest img {
+	width: 90%;
+	margin: 0px auto 0px auto;
+}
+
+#sidebar-right .img_link {
+  width: 30px;
+}
+
+.clear {
+	clear:both;
+}
+
+#footer {
+  width: 944px; 
+  clear: both;
+  margin: 0px auto 0px auto; 
+  padding: 8px;  
+  text-align: left;   
+  border-top: 1px solid #3366FF;
+  border-bottom: 3px solid #3366FF; 
+}
+
+hr { 
+  margin-top: 16px; 
+  margin-bottom: 16px;
+}

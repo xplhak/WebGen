@@ -1,0 +1,152 @@
+/*
+    Copyright (c) 2009 Jaromír Plhák
+
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation
+    files (the "Software"), to deal in the Software without
+    restriction, including without limitation the rights to use,
+    copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following
+    conditions:
+    
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+*
+{
+	margin:0;
+	padding:0;
+}
+
+body{
+font-size:10pt;
+letter-spacing:1px;
+background: url(./img/xbg.gif) no-repeat 0 +25px ;
+font-family: Helvetica, Arial, sans-serif;
+word-spacing: 5px;
+letter-spacing:-1px;
+color: #515151;
+}
+
+#container{
+margin: 100px auto 0 auto;
+width:855px;}
+
+#navdiv
+{
+	text-align: right;
+	height:60px;
+}
+
+#navdiv ul
+{
+	list-style-type: none;
+	list-style-image: none;
+	margin:0 auto 0 auto;
+}
+
+#navdiv ul li
+{
+	float: right;
+	margin-right:10px;
+	list-style-type: none;
+	list-style-image: none;
+}
+
+#navdiv ul li a
+{
+	padding:30px 0 0 0;
+	background: #d0d0d0;
+	display: block;
+	padding-top:10px;
+	width: 100px;
+	height:50px;
+	text-align: center;
+	color:#515151;
+	text-decoration: none;
+}
+#navdiv ul li a:hover
+{
+	/*background: url(navlisttabhover.png) 0 0 no-repeat ;*/
+	background: #f7f7f7;
+}
+
+#navdiv ul li a.selected
+{
+	padding:30px 0 0 0;
+	background: #f7f7f7;
+	display: block;
+	padding-top:10px;
+	width: 100px;
+	height:50px;
+	text-align: center;
+	color:#515151;
+	text-decoration: none;
+}
+
+#content
+{
+background-color: #f7f7f7;
+padding:20px 0 20px 20px;
+height:700px;
+}
+
+h1,h2,h3,h4{
+padding:25px 0 5px 0 ;}
+
+h1{font-size:4em;}
+h2{font-size:2em;}
+h3{font-size:1.5em;}
+
+.heading_coauthor {
+    padding-left:40px;
+}
+
+#picturelist {
+text-align:left;
+margin-right:auto;
+margin-left:auto;
+}
+
+#picturelist li {
+list-style:none;
+float:left;
+margin:42px;
+font-weight:bold;
+color:#777777;
+}
+
+#picturelist img{
+display:block;
+border:2px solid gray;
+height: 100px;
+}
+
+#picturelist img:hover{
+border:2px solid #515151;
+}
+
+#picturelist a{
+color:#777777;
+text-decoration:none;
+}
+
+#picturelist a:hover{
+color:#999999;
+}
+
+
+
+
+

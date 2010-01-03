@@ -1,0 +1,310 @@
+/*
+    Copyright (c) 2009 Jakub Mareček
+    
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation
+    files (the "Software"), to deal in the Software without
+    restriction, including without limitation the rights to use,
+    copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following
+    conditions:
+    
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+body{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background:#73ACD9;
+	margin: 0px;
+	padding: 0px;
+}
+
+#header{
+  background-color: #5096FC;
+  background-image: url('img/pozadi-kary-modry.png');
+  width: 966px;
+  height: 224px;
+  color:#fff;
+  margin-left: 70px;
+  margin-right: 70px;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#header #main_photo {
+  margin: 15px;
+	float:left;
+}
+
+#header #main_photo img{
+	width:200px;
+	height: 150px;
+	border: 2px solid white;	
+}
+
+#header .content{
+	width:966px;
+	border:1px solid transparent;
+	margin:0 auto;
+}
+
+#header .content h1{
+	margin:75px 20px 50px 20px;
+	font-size:160%;
+	color: #fff;
+}
+
+#header .content ul {
+	margin:0;
+	height:40px;
+	width:925px;
+}
+
+#header .content ul li{
+	display:inline;
+	padding:0;
+	margin:2px 5px 0 5px;
+	display:block;
+	float:left;
+	height:40px;
+}
+
+#header .content ul li a {
+  font-size:90%;
+	display:inline;
+	font-weight:bold;
+	text-decoration:none;
+	height:40px;
+	color:#000;
+}
+
+#header .content ul li a:hover, #header .content ul li a:active, #header .content ul li a.active {
+	height:50px;
+	color: #4E7EE0;
+	cursor: pointer;
+}
+
+#main {
+  float: left;
+	width:966px;
+	margin-left: 70px;
+	margin-right: 70px;
+	background-color: #FFFFFF;
+	padding-left: 0px;
+}
+
+
+#menu{
+  float:left;
+  list-style:none;
+  background: #D4E7F9;
+  border-bottom: 1px solid #73ACD9;
+
+}
+#menu li{
+  float:left;
+}
+
+#menu a{
+  display:block;
+  height:38px;
+  padding:0 14px;
+  color:#000;
+  font-weight:bold;
+  line-height:38px;
+  text-decoration:none;
+}
+
+#menu a:hover{
+  color: #4E7EE0;
+}
+
+
+
+h1 {
+  font-size: 160%;
+  font-variant: small-caps;
+  color: #336699;
+}
+
+h2{
+  color: #666;
+  font-size: 120%;
+  font-variant: small-caps;
+}
+
+h3{
+  color: #999;
+  font-size: 100%;
+  font-variant: small-caps;
+}
+
+dt{
+  font-size: 90%;
+  font-variant: small-caps;
+  padding-left: 10px;
+  color: #1f933a;
+}
+dd{
+  font-size: 90%;
+  padding-left: 40px;
+  margin: 6px;
+  font-weight: bold;
+  color: #3778b5;
+  padding-left: 20px;
+}
+
+a {
+  text-decoration: underline;
+  color: #2d8fea;
+}
+a:hover{
+  text-decoration: underline;
+  color: #FF9933;
+}
+
+#sidebar-right{
+  float:left;
+  width:275px;
+  background:#D4E7F9;
+  overflow:hidden;
+  text-align: center;
+  margin-top: 10px;
+  border: 1px solid #73ACD9;
+  padding: 3px;
+}
+
+#links {
+  text-align: left;
+}
+
+#sidebar-right ul{
+  padding: 0px 10px 5px 10px;
+  list-style: none;
+}
+#sidebar-right li{
+  border-bottom: 2px solid #4A8E61;
+  padding: 3px;
+}
+
+#sidebar-right a{
+  color: #000;
+  text-decoration: none;
+  font-variant: small-caps;
+  font-size: 90%;
+  font-weight: 500;
+}
+
+#sidebar-right a:hover{
+  color: #4E7EE0;  
+}
+
+#center{
+  float:right;
+  display:block;
+  width:650px;
+  padding:0 10px 10px;
+  text-align:left;
+}
+
+#footer{
+  text-align: center;
+  clear:both;
+  float:left;
+  width:966px;
+  height:38px;
+  margin:0px 0 0 70px;
+  padding:3px 0 0;
+  background:#D4E7F9;
+  color:#553;
+  font-size: 90%;
+  border-top: 1px solid #73ACD9;
+}
+
+.img_link {
+  width: 25px;
+}
+
+#ul_hobbies, #ul_knowledges {
+  font-size: 90%;
+  padding-left: 40px;
+  margin: 6px;
+  font-weight: bold;
+  color: #3778b5;
+  padding-left: 20px;
+  list-style-type: square;
+}
+.dl_university_projects{
+  border-bottom: 1px dashed #D4E7F9;
+  background-image: url('img/language.gif');
+  background-repeat: no-repeat;
+  background-position: right 10px;
+}
+
+#dl_company {
+  border-bottom: 1px dashed #D4E7F9;
+}
+
+#contact_information, #university_information, #company_information, #hobbies, #knowledges, #birth_information {
+  border-bottom: 1px dashed #89c46c;
+  min-height: 120px;
+}
+
+#contact_information {
+  background-image: url('img/information.jpg');
+  background-repeat: no-repeat;
+  background-position: right 10px;
+}
+
+#university_information {
+  background-image: url('img/qualification.jpg');
+  background-repeat: no-repeat;
+  background-position: right 10px;
+}
+
+#company_information {
+  background-image: url('img/working.jpg');
+  background-repeat: no-repeat;
+  background-position: right 10px;
+}
+
+#knowledges {
+  background-image: url('img/skills.jpg');
+  background-repeat: no-repeat;
+  background-position: right 10px;
+}
+
+#hobbies {
+  background-image: url('img/hobbies.jpg');
+  background-repeat: no-repeat;
+  background-position: right 10px;
+}
+
+#birth_information {
+  background-image: url('img/birth.gif');
+  background-repeat: no-repeat;
+  background-position: right 10px;
+}
+
+#img_gate_photo {
+  width: 350px;
+  height: 250px;
+  margin-top: 25px;
+  padding-left: 68px;
+}
+
+#cv {
+    width:400px;
+}

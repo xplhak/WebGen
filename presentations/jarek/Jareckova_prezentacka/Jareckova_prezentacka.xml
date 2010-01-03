@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<presentation lastModified="30. 12. 2009" author="jarek" presentationName="Jareckova_prezentacka" presentationFullName="Jarečkova prezentačka" presentationType="pp" xsi:noNamespaceSchemaLocation="http://andromeda.fi.muni.cz/~xplhak/webgen/xml/scheme/webgen.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<style>
+		<language>czech</language>
+		<css>pp1.css</css>
+		<xsl>private_page.xslt</xsl>
+	</style>
+
+	<personalPageData>
+		<person>
+			<fullName>Jaromír Plhák</fullName>
+		</person>
+	</personalPageData>
+</presentation>

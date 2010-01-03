@@ -1,0 +1,69 @@
+/*
+    Copyright (c) 2009 Petr Šigut
+
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation
+    files (the "Software"), to deal in the Software without
+    restriction, including without limitation the rights to use,
+    copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following
+    conditions:
+    
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+div.gb_msg {
+  margin: 20px 20px 20px 20px;
+  color: black;
+  border-width: 1px;
+  border-color: gray;
+  border-style: solid;
+  background-color: #f6f5e9;
+}
+
+.gb_header a {
+  color: black;
+}
+
+div.gb_msg div.gb_header {
+  padding: 10px 10px 0 10px;
+  border-width: 0px 0px 1px 0px;
+  border-color: gray;
+  border-style: dashed;
+  background-color: #636378;
+}
+
+div.gb_msg div.gb_header span {
+  float: right;
+}
+
+div.gb_msg div.gb_content {
+  padding: 10px 10px 0 10px;
+}
+
+.clear {
+    list-style-type: none;
+}
+
+li {
+    margin-top: 10px;
+}
+
+#msg {
+    margin-top: 10px;
+}
+
+hr {
+    margin-bottom: 15px;
+}

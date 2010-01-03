@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs">
+
+    <head>
+  		    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  		    <link rel="stylesheet" type="text/css" href="personal_css.css"/>
+  		    <title>Osobní stránka - Jaromír Plhák</title>
+  		    
+          <script type="text/javascript" src="personal_page_script.js"></script>
+          <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+
+    </head>
+  
+    <body>
+      <div id="header">
+      	<div class="content">
+      	 <div id="main_photo">
+            <!--<img id="img_main_photo"
+            src="http://www.fi.muni.cz/~xplhak/ajax/foto.jpg"
+            title="Fotografie mojí osoby" alt="Fotografie mojí osoby"
+            onclick="newpage()"/>-->
+          </div>
+        
+          <h1 id="heading">Osobní stránka - Jaromír Plhák</h1>
+      
+        <!-- pokud si uzivatel nevybere zadnou z moznosti - diskuze, cv, ankety, pak se menu nebude generovat -->
+        <ul id="menu">
+            <li><a href="struktura.html" title="O mně">O mně</a></li>
+            <li><a href="cv.html" title="Curriculum Vitae">Curriculum Vitae</a></li>
+
+            <li><a href="diskussion.html" title="Diskuze">Diskuze</a></li>
+            <li>...</li>
+        </ul>
+ 
+        
+        </div> <!-- /content -->
+     </div>   <!-- /header -->
+        <!-- pokud uživatel nevybere možnost kontaktní informace, nebude tenhle seznam do stránky vložen -->
+        
+		<div id="main">
+			<div id="center">    
+        <div id="contact_information">			   
+            <h2 id="h2_contact">Kontaktní informace:</h2>
+          <p>Drobnosti: Když nechci fotku v hlavičce? Ikony u linku do stylu?
+          u faxu chybí dvojtečka. ndash misto pomlček, sjednotit psaní datumu</p>
+
+            
+            <!-- v kontaktních informacích se budou moci vyskytovat ikonky k jednotlivým informacím, které se vloží (asi) do dt místo/před pojmenování -->            
+            <dl id="dl_contact">           
+                <dt>Jméno:</dt>
+                <dd>Mgr. Jaromír Plhák</dd>
+            
+                <dt>Email:</dt>
+                <dd>xplhak@mail.muni.cz</dd>
+      			
+                <dt>Adresa:</dt>
+
+                <dd>Dvořákova 11, 750 02 Přerov, Česká Republika</dd>
+
+                <dt>Mobilní telefon:</dt>
+                <dd>777123456</dd>
+                        
+                <dt>Pevná linka:</dt>
+                <dd>123456789</dd>                    
+                    
+                <dt>Fax</dt>
+
+                <dd>555666444</dd>
+
+          			<dt>ICQ:</dt>
+                <dd>174-082-954</dd>
+                
+          			<dt>Skype:</dt>
+                <dd>Antkoholic</dd>
+          			
+                <dt>MSN:</dt>
+
+                <dd>Antkoholic@seznam.cz</dd>
+                
+          			<dt>IRC:</dt>
+                <dd>Jarek_parek</dd>          			
+          			
+                <dt>Jabber:</dt>
+                <dd>Antkoholic@seznam.cz</dd>
+          			
+                <dt>AIM:</dt>
+
+                <dd>Antkoholic@seznam.cz</dd>
+            </dl>
+        </div>
+        
+        <div id="university_information"> 
+            <h2 id="h2_university">Informace o práci na univerzitě:</h2>
+            <!-- v případě studenta: Informace o studiu. -->
+            
+            <dl id="dl_university">
+                <dt>Univerzita:</dt>
+
+                <dd>Masarykova univerzita</dd>
+                
+                <dt>Fakulta:</dt>
+                <dd>Fakulta informatiky</dd>
+    <!-- 
+        v případě studenta:        
+                <dt>Obor</dt>
+                <dd>Aplikovaná informatika</dd>
+                
+                <dt>Ročník</dt>
+                <dd>2.</dd>
+    
+        v případě zaměstnance:
+    -->
+
+                <dt>Katedra:</dt>
+                <dd>Katedra informačních technologií</dd>
+
+                
+                <dt>Pozice:</dt>
+                <dd>doktorand</dd>
+                
+                <dt>Kancelář:</dt>
+                <dd>B201</dd>
+                
+                <dt>Pracovní telefon:</dt>
+                <dd>+420123456789</dd>            
+                
+                <dt>Konzultační hodiny:</dt>     <!-- může být více dd -->
+
+                <dd>Pondělí 8:00 - 10:00</dd>
+                <dd>Středa 12:00 - 14:00</dd>                
+                
+                <dt>Adresa:</dt>
+                <dd>Botanická 68a, 602 00 Brno</dd>            
+
+                <dt>Webová prezentace univerzity:</dt>
+                <dd><a href="http://www.muni.cz/" title="Masarykova univerzita">Masarykova univerzita</a></dd>   
+            
+                <dt>Webová prezentace fakulty:</dt>
+
+                <dd><a href="http://www.fi.muni.cz/" title="Fakulta informatiky">Fakulta informatiky</a></dd>
+            </dl>
+ 
+            <div id="university_projects">
+                <h3 id="h3_university_projects">Projekty</h3>
+
+                <dl class="dl_university_project">
+                    <dt>Název projektu:</dt>
+                    <dd>DialogWebGen</dd>
+
+                            
+                    <dt>Popis:</dt>
+                    <dd>Generování kvalitních webových stránek pomocí dialogu, především pro nevidomé a začínající uživatele. Je to alternativa k WYSIWYG editorům. Vyvýjí se v týmu v laboraři LSD.</dd>
+                      
+                    <dt>Datum ukončení:</dt>
+                    <dd>2010</dd>
+                            
+                    <dt>Webová prezentace:</dt>      
+                    <dd><a href="http://lsd.fi.muni.cz/" title="Projekt DialogWebGen">Projekt DialogWebGen</a></dd>
+
+                </dl>
+
+                <dl class="dl_university_project">
+                    <dt>Název projektu:</dt>
+                    <dd>Generování grafiky pomocí dialogu pomocí systému GATE</dd>
+                            
+                    <dt>Popis:</dt>
+                    <dd>Generování grafiky je zaměřeno na nevidomé uživatele, kteří nemají možnost prozkoumat obrázek jinak, než pomocí alternativního textu. Využívá se formát SVG. Prozkoumávání bude umožněno pomocí anotace a případně pomocí sonifikace.</dd>
+
+                      
+                    <dt>Datum ukončení:</dt>
+                    <dd>2010</dd>
+                            
+                    <dt>Webová prezentace:</dt>      
+                    <dd><a href="http://lsd.fi.muni.cz/" title="Projekt GATE">Projekt GATE</a></dd>
+                </dl>
+            </div>                  
+        </div>
+      
+        <div id="company_information">
+
+            <h2 id="h2_company">Informace o zaměstnání.</h2>
+            
+            <dl id="dl_company">
+                <dt>Firma:</dt>
+                <dd>IBM</dd>
+                
+                <dt>Oblast podnikání:</dt> <!-- může být více dd -->
+                <dd>Informační technologie</dd>
+
+                <dd>Podnikové poradenství</dd>
+                <dd>Finanční služby</dd>              
+                
+                <dt>Pracovní náplň:</dt> <!-- může být více dd -->
+                <dd>Tester</dd>
+                <dd>Analyzátor</dd>
+
+                <dt>Dosažená pozice:</dt>
+
+                <dd>Teamleader</dd>
+                
+                <dt>Adresa:</dt>
+                <dd>V Parku 2294/4, 148 00 Praha 4 - Chodov</dd>
+                
+                <dt>Webová prezentace:</dt>
+                <dd><a href="http://www.ibm.com/cz/cs/" title="IBM - Česká republika">IBM - Česká republika</a></dd>
+            </dl>
+
+        </div>        
+
+    		<div id="hobbies">
+    				<h2 id="h2_hobbies">Koníčky:</h2>
+    				
+            <ul id="ul_hobbies">
+      					<li>plavání</li>
+      					<li>stolní tenis</li>
+      					<li>web design</li>
+
+      					<li>volejbal</li>
+      					<li>deskové hry</li>
+    				</ul>
+    		</div>
+    			
+        <div id="knowledges">
+      			<h2 id="h2_knowledges">Znalosti a dovednosti:</h2>
+      			
+            <ul id="ul_knowledges">
+
+        				<li>řidičský průkaz skupiny B</li>
+        				<li>pokročilá znalost anglického jazyka</li>
+        				<li>základní znalost německého jazyka</li>
+        				<li>základní znalost technologií PHP, JavaScript, VoiceXML</li>
+      			</ul>
+    		</div>
+    			
+    		<div id="birth_information">
+
+    		    <h2 id="h2_birth">Informace o datu a místu narození:</h2>
+				    
+				    <dl id="dl_birth">
+                <dt>Datum narození:</dt>
+                <dd>14.5.1982</dd>
+                
+				        <dt>Znamení:</dt>
+                <dd>Býk</dd>
+
+                
+                <dt>Místo narození:</dt>
+                <dd>Přerov</dd>
+            </dl>
+        </div>
+				      		
+    		<div id="text_block"> 
+    		        <p>Zde je text o kterém chci mluvit a ke kterému je přiložen další obrázek. Zbytek textu bude zkopírován z internetu. Další doporučení zmíněná na této stránce jsou oproti principu "Odvážně editujte!" méně důležitá, ale popisují, jak by měl dobrý článek v encyklopedii vypadat. Nemusíte se obávat, že je náhodou porušíte, ale je lepší je znát a dodržovat.</p>
+    		        <img src="http://www.fi.muni.cz/~xplhak/ajax/foto1.jpg" class="left" alt="Ilustrrační fotografie A"/>
+
+    		        <p>Zde je text o kterém chci mluvit a ke kterému je přiložen další obrázek. Zbytek textu bude zkopírován z internetu. Další doporučení zmíněná na této stránce jsou oproti principu "Odvážně editujte!" méně důležitá, ale popisují, jak by měl dobrý článek v encyklopedii vypadat. Nemusíte se obávat, že je náhodou porušíte, ale je lepší je znát a dodržovat.</p>
+    		        <img src="http://www.fi.muni.cz/~xplhak/ajax/foto1.jpg" class="right" alt="Ilustrační fotografie B"/>
+
+    		        <p>Zde je text o kterém chci mluvit a ke kterému je přiložen další obrázek. Zbytek textu bude zkopírován z internetu. Další doporučení zmíněná na této stránce jsou oproti principu "Odvážně editujte!" méně důležitá, ale popisují, jak by měl dobrý článek v encyklopedii vypadat. Nemusíte se obávat, že je náhodou porušíte, ale je lepší je znát a dodržovat.</p>
+ 			<div class="clear"> </div>
+    		</div>
+			</div>
+<div id="sidebar-right">
+        <div id="links">    
+     <!-- odkazy mohou být buď čisté, nebo u nich může být malá ikonka, když si to uživatel přeje, potom bude odkazovat nejen odkaz ale i ikonka. Kliknuti na ikonku zajistim JavaScriptem pomoci onclick -->
+     
+     <!-- do deseti odkazu budou v jednom <ul>, nad deset budou rodeleny do nekolika <ul> dle kategorii -->
+                 
+            <div class="links_user">
+                
+                <ul class="all_links">
+
+                    <li>
+                        <img class="img_link" src="img/icon_jarek.png" alt="Ikona pro odkaz Jarkova osobní stránka"/>
+                        <a class="a_link" href="http://www.fi.muni.cz/~xplhak/" title="Jarkova osobní stránka">Jarkova osobní stránka</a>
+                    </li>
+                    <li>
+                        <img class="img_link" src="img/icon_jarek.png" alt="Ikona pro odkaz Laboratoř LSD"/>
+                        <a class="a_link" href="http://lsd.fi.muni.cz/tiki-index.php">Laboratoř LSD</a>
+                    </li>
+
+                </ul>
+            </div>
+           
+
+    <!-- další možné kategorie odkazů, zachovávají stejnou strukturu, jako odkazy předchozí s tím, že ikony u předdefinovaných již budou předpřipraveny
+            
+            <ul class="links_user"></ul> 
+            <ul class="links_blind"></ul> 
+            <ul class="links_social"></ul>
+            <ul class="links_chat"></ul>
+            <ul class="links_browser"></ul>
+            <ul class="links_news"></ul>  
+            <ul class="links_search"></ul>  
+            <ul class="links_dictionary"></ul>
+            <ul class="links_map"></ul>  
+            <ul class="links_client"></ul>  
+            <ul class="links_gallery"></ul>
+            <ul class="links_games"></ul>
+    -->
+        </div>    		
+    		    		
+        <div id="calendar">
+            <img src="http://www.fi.muni.cz/~xplhak/ajax/calendar.jpg" alt="Ukázka kalendáře"/>
+            <!-- zatim obrazek pak by zde mela byt nejaka jednoducha aplikace -->
+        </div>
+
+        <div id="clock">
+
+            <img src="http://www.fi.muni.cz/~xplhak/ajax/clock.jpg" alt="Ukázka hodin"/>
+            <!-- zatim obrazek pak by zde mela byt nejaka jednoducha aplikace -->
+        </div>        
+
+        <div id="weather">
+            <img src="http://www.fi.muni.cz/~xplhak/ajax/weather.jpg" alt="Ukázka ukazatele počasí"/>
+            <!-- zatim obrazek pak by zde mela byt nejaka jednoducha aplikace -->
+        </div>
+        
+        <div id="counter">
+            <img src="http://www.fi.muni.cz/~xplhak/ajax/counter.jpg" alt="Ukázka počítadla"/>
+
+            <!-- zatim obrazek pak by zde mela byt nejaka jednoducha aplikace -->
+        </div>
+
+        <div id="quest">
+            <img src="http://www.fi.muni.cz/~xplhak/ajax/quest.jpg" alt="Ukázka ankety"/>
+            <!-- zatim obrazek pak by zde mela byt nejaka jednoducha aplikace -->
+        </div>
+        
+        <div id="address_book">
+            <!-- zatim nemam představu, jak to bude vypadat - zřejmě něco rozklikávacího -->
+
+        </div>
+        
+        <div id="email_sender">
+            <!-- jednoducha aplikace - neco jak je na http://www.janbraum.unas.cz/ -->
+        </div>                
+ 			</div> <!-- /sidebar-right -->
+ 			  
+</div><!-- /main -->
+    <!-- diskuze bude na samostatné stránce --> 
+  
+		    <div id="footer">
+		    	<p>WebGen, 2008. Naposledy změněno dne 27. 3. 2009</p>
+		    </div>  
+
+    </body>
+</html>

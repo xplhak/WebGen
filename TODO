@@ -1,0 +1,96 @@
+Dodělat:
+
+- heslo
+    - delka alespon tri znaky
+    - pokud se vracim (a jsem uspesne prihlaseny) tak misto moznosti registrace bude vybrana moznost prihlaseni se vsim co s tim souvisi (neni zoberazena moznost opakovani hesla, vyber stylu jen kdyz je zaskrtly prislusny checkbox, kontrola chzbovych hlasek, ...)
+    - pri vytvoreni profilu by se mel vytvorit adresar pro daneho uzivatele
+
+
+
+- nahrát na GITHUB
+    - začít verzovat
+- dlouhý textfield
+    - echo nekopíruje vstup (enter)
+    - dlouhý řetězec bez mezery (pozor i ve vygenerované stránce)
+    - celkově otestovat v IE
+- dlouhý název prezentace ve vygenerované stránce (ošetřit)
+- dlouhý název blogu
+- povinnost zadat psč 
+    - pokud ji nezadá, ale zadá jinou část adresy, tak vyhodit chybu
+- informace o zmenšování fotky
+    - např. Vaše fotografie bude změnšena ... "Obrázek bude upraven na čtvercový formát o rozměrech nejvýše 186 x 186 px."
+    - podobně u obrázků ve volném textu
+- překlad u odkazů
+    - překontrolovat, co není přeloženo
+    - doplnit zahraniční servery (http://www.bbc.co.uk/, http://www.cnn.com, http://www.reuters.com/).
+    - odkazy jsou lokalizovane pouze pro cestinu
+- u ICQ a podobnych cisel udelat pomlcku mezi trojicema cisel (u ICQ OK), promyslet, kde by podobna kontrola byla take potreba
+- kontrola ze rok ukonceni je pozdeji nez rok zacatku
+- validace pomocí regulárních výrázů
+
+
+- generování aplikací
+- html stránku pro odeslání emailu autorovi
+    - propojit přes menu
+    - udělat styl
+    - kopírovat při generování
+- vytvořit alespoň jeden styl pro blog
+- dokončit galerii (nečítání ze souboru)
+
+
+- meření počtu přístupů
+- připomenout testování - Teiresiás
+- odkaz na stránkách LSD
+
+- help na stisknuti tlacitka (odkomentovat, dopsat nápovědu)
+- ošetření js hacků
+- při přidání elementu se tlačítko "přidat projekt" změní na tlačítko "odebrat projekt"
+    - focus se posune na následující element
+- pokud uživatel nezmění informace, pak se nebude vypisovat echo
+- kontrola jestli jsou odkazy aktivní
+- při generování blogu, použít Texy
+- základní informace
+    - zobrazovat jen po určitý počet spuštění
+    - pamatovat počet spuštění uživatelem v jeho profilu
+- email pomocí at, zavináč dot, čárka apod.
+    - obecne zapojit gramatiky  
+- kontrola spravnosti - pokud je chyba u user name a presentation name - nepustit dal, stejne tak jako u emailu nebo webove stranky.
+- pri vytvoreni profilu by se mel vytvorit adresar pro daneho uzivatele
+- Problem s cache, kde zustavaji informace o minule vytvorenych prezentacich
+    - mazání cookies
+    - kdy a za jakých podmínek
+- Miniaplikace
+    - Adresar
+    
+    
+
+
+Problémy při testování:
+    - Kontaktni informace: kdyz rozepisu text, ktery jsem jiz nekdy vyplnoval a prohlizec mi ho nabidne, ja dam sipku dolu, tak:
+        - a) dam rovnou tab a pak kontrolni hlaska pise jenom text ktery jsem napsal pred stisknutim tabu
+        - b) dam enter a pak tab a pak je vse v poradku i kdyz to udelam variantou a), vse je v poradku a projde a na vygenerovane strance je to spravne
+    
+    - Vyber stylu
+        - Kdyz jen protabuju a nevyberu zadny styl, neobevi se hlaska, ze jsem vybral styl vhodny pro fotku, ktery je zaskrtly defaultne
+        - Kdyz si vygeneruju stranku s malo informacemi a hodne odkazy, tak na ty odkazy nestaci bile pole v tom grafickem stylu a presahuji
+    
+    - Deformace fotek
+    
+    - Jen taková myšlenka - zadávám jazyk, pak vyplňuju jméno a tak, a pak až si zvolím styl... kdybych byl slabozraký tak až doteď bych to musel řešit nějak sám...
+
+
+
+
+
+
+
+
+
+Možná - ještě promyslet:
+- ochrana proti botum (emaily, automaticke vyplnovani)
+- pri vkladani praxe a vzdelani skryt predchozi a dat tam jen oynaceni co bylo zadano, pripadne moznost zaskrtnuti pro naslednou editaci.
+- Životopis
+    - co kdyz omylem pridam jazyk (jak zrusit???)
+    - publikace, ocenění, výrobky
+- Tlacitko k ulozeni rozdelane prezentace
+

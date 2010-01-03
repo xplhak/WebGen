@@ -1,0 +1,518 @@
+<?xml version="1.0"?>
+
+<!-- 
+/*
+    Copyright (c) 2009 Jaromír Plhák, Jiří Uhýrek
+
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation
+    files (the "Software"), to deal in the Software without
+    restriction, including without limitation the rights to use,
+    copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following
+    conditions:
+    
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+*/
+-->
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Simple types definitions -->
+	<xs:simpleType name="languageType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="english"/>
+			<xs:enumeration value="czech"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="dayType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Monday"/>
+			<xs:enumeration value="Tuesday"/>
+			<xs:enumeration value="Wednesday"/>
+			<xs:enumeration value="Thursday"/>
+			<xs:enumeration value="Friday"/>
+			<xs:enumeration value="Saturday"/>
+			<xs:enumeration value="Sunday"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="emailType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[^@]+@[^\.]+\..+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--
+	<xs:simpleType name="maritalStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="married"/>
+			<xs:enumeration value="single"/>
+		</xs:restriction>
+	</xs:simpleType>
+	-->
+	<xs:simpleType name="textAlignType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="left"/>
+			<xs:enumeration value="right"/>
+			<xs:enumeration value="center"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Complex types definitions -->
+	<xs:complexType name="personalInformationType">
+		<xs:sequence>
+			<xs:element name="prefix" type="xs:string" minOccurs="0"/>
+			<xs:element name="fullName" type="xs:string"/>
+			<xs:element name="sufix" type="xs:string" minOccurs="0"/>
+			<xs:element name="photo" type="photoType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="photoType">
+		<xs:sequence>
+			<xs:element name="url" type="xs:string"/>
+			<xs:element name="alt" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="addressType">
+		<xs:sequence>
+			<xs:element name="address" type="addrType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="addrType">
+		<xs:sequence>
+			<xs:element name="street" type="xs:string"/>
+			<xs:element name="houseNumber"/>
+			<xs:element name="city" type="xs:string"/>
+			<xs:element name="zipCode" type="xs:string"/>
+			<xs:element name="country" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="contactsType">
+		<xs:sequence>
+			<xs:element name="email" type="emailType" minOccurs="0"/>
+			<xs:element name="homeAddress" type="addressType" minOccurs="0"/>
+			<xs:element name="phoneNumbers" type="phoneNumbersType" minOccurs="0"/>
+			<xs:element name="communicationProtocols" type="communicationProtocolsType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="phoneNumbersType">
+		<xs:sequence>
+			<xs:element name="mobilePhone" type="xs:string" minOccurs="0"/>
+			<xs:element name="phone" type="xs:string" minOccurs="0"/>
+			<xs:element name="fax" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="communicationProtocolsType">
+		<xs:sequence>
+			<xs:element name="icq" type="xs:integer" minOccurs="0"/>
+			<xs:element name="skype" type="xs:string" minOccurs="0"/>
+			<xs:element name="jabber" type="xs:string" minOccurs="0"/>
+			<xs:element name="irc" type="xs:string" minOccurs="0"/>
+			<xs:element name="aim" type="xs:string" minOccurs="0"/>
+			<xs:element name="msn" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="consultationType">
+		<xs:sequence>
+			<xs:element name="day" type="xs:string"/>
+			<xs:element name="from" type="xs:string"/>
+			<xs:element name="to" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="consultationHoursType">
+		<xs:sequence>
+			<xs:element name="consultation" type="consultationType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="projectType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+			<xs:element name="coWorkers" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="coWorker" type="coWorkerType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="yearFinished" type="xs:integer" minOccurs="0"/>
+			<xs:element name="projectUrl" type="urlType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="schoolInformationType">
+		<xs:sequence>
+			<xs:element name="university" type="xs:string"/>
+			<xs:element name="faculty" type="xs:string" minOccurs="0"/>
+			<xs:element name="student" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="branch" type="xs:string" minOccurs="0"/>
+						<xs:element name="grade" type="xs:integer" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="employee" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="department" type="xs:string" minOccurs="0"/>
+						<xs:element name="positions" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="position" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="office" type="xs:string" minOccurs="0"/>
+						<xs:element name="workPhone" type="xs:string" minOccurs="0"/>
+						<xs:element name="consultationHours" type="consultationHoursType" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="schoolAddress" type="addressType" minOccurs="0"/>
+			<xs:element name="universityUrl" type="urlType" minOccurs="0"/>
+			<xs:element name="facultyUrl" type="urlType" minOccurs="0"/>
+			<xs:element name="projects" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="project" type="projectType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="coWorkerType">
+		<xs:sequence>
+			<xs:element name="person" type="personalInformationType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="urlType">
+		<xs:sequence>
+			<xs:element name="webUrl" type="urlCompleteType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="urlCompleteType">
+		<xs:sequence>
+			<xs:element name="url" type="xs:string"/>
+			<xs:element name="title" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="linkType">
+		<xs:sequence>
+			<xs:element name="url" type="xs:string"/>
+			<xs:element name="title" type="xs:string"/>
+			<xs:element name="iconFile" type="xs:string" minOccurs="0"/>
+			<xs:element name="type" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="businessInformationType">
+		<xs:sequence>
+			<xs:element name="businessName" type="xs:string"/>
+			<xs:element name="id" type="xs:integer" minOccurs="0"/>
+			<xs:element name="directions" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="direction" type="xs:string" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="workloads" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="workload" type="xs:string" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="position" type="xs:string" minOccurs="0"/>
+			<xs:element name="businessAddress" type="addressType" minOccurs="0"/>
+			<xs:element name="businessUrl" type="urlType" minOccurs="0"/>
+			<xs:element name="otherInformation" type="brMixedType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="birthType">
+		<xs:sequence>
+			<xs:element name="date" type="xs:string" minOccurs="0"/>
+			<xs:element name="place" type="xs:string" minOccurs="0"/>
+			<xs:element name="sign" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="knowledgeType">
+		<xs:sequence>
+			<xs:element name="course" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="from" type="xs:gYear"/>
+						<xs:element name="to" type="xs:gYear" minOccurs="0"/>
+						<xs:element name="level" type="xs:string" minOccurs="0"/>
+						<xs:element name="degree" type="xs:string" minOccurs="0"/>
+						<xs:element name="schoolName" type="xs:string"/>
+						<xs:element name="branch" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="experiencesType">
+		<xs:sequence>
+			<xs:element name="work" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="from" type="xs:gYear"/>
+						<xs:element name="to" type="xs:gYear" minOccurs="0"/>
+						<xs:element name="businessName" type="xs:string"/>
+						<xs:element name="branch" type="xs:string" minOccurs="0"/>
+						<xs:element name="position" type="xs:string" minOccurs="0"/>
+						<xs:element name="workload" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="personalSkillsType">
+		<xs:sequence>
+			<xs:element name="itSkills">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="level" type="xs:string"/>
+						<xs:element name="description" type="brMixedType" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="drivingLicence" type="xs:string" minOccurs="0"/>
+			<xs:element name="languages" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="language" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="name" type="xs:string"/>
+									<xs:element name="level" type="xs:string"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="otherSkills" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="skill" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="name" type="brMixedType"/>
+									<xs:element name="level" type="xs:string" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cvType">
+		<xs:sequence>
+			<xs:element name="cvEmail" minOccurs="0"/>
+			<xs:element name="cvAddress" type="addressType" minOccurs="0"/>
+			<xs:element name="cvPhone" type="xs:string" minOccurs="0"/>
+			<xs:element name="nationality" type="xs:string" minOccurs="0"/>
+			<xs:element name="maritalStatus" type="xs:string" minOccurs="0"/>
+			<xs:element name="courses" type="knowledgeType" minOccurs="0"/>
+			<xs:element name="workExperiences" type="experiencesType" minOccurs="0"/>
+			<xs:element name="personalSkills" type="personalSkillsType" minOccurs="0"/>
+			<xs:element name="otherInformation" type="brMixedType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="textType">
+		<xs:sequence>
+			<xs:element name="header" type="xs:string" minOccurs="0"/>
+			<xs:element name="message" type="brMixedType"/>
+			<xs:element name="align" type="textAlignType"/>
+			<xs:element name="tfphoto" type="photoType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="brMixedType" mixed="true">
+		<xs:sequence>
+			<xs:element name="br" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="baseApplicationType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="parameters" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="parameter" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="name" type="xs:string"/>
+								<xs:attribute name="value" type="xs:string"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="pollApplicationType">
+		<xs:sequence>
+			<xs:element name="question" type="xs:string"/>
+			<xs:element name="answers">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="answer" type="xs:string" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="applicationsType">
+		<xs:sequence>
+			<xs:element name="photoGATE" type="photoType" minOccurs="0"/>
+			<xs:element name="guestbook" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="type"/>
+						<xs:element name="parameters" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="parameter" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:attribute name="name"/>
+											<xs:attribute name="value"/>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="poll" type="pollApplicationType" minOccurs="0"/>
+			<xs:element name="application" type="baseApplicationType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="personalPageDataType">
+		<xs:sequence>
+			<xs:element name="person" type="personalInformationType"/>
+			<xs:element name="contacts" type="contactsType" minOccurs="0"/>
+			<xs:element name="school" type="schoolInformationType" minOccurs="0"/>
+			<xs:element name="business" type="businessInformationType" minOccurs="0"/>
+			<xs:element name="hobbies" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="hobby" type="xs:string" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="knowledges" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="knowledge" type="xs:string" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="birth" type="birthType" minOccurs="0"/>
+			<xs:element name="texts" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="text" type="textType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="links" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="link" type="linkType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="cv" type="cvType" minOccurs="0"/>
+			<xs:element name="applications" type="applicationsType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Root element definition -->
+	<xs:element name="presentation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="style">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="language" type="languageType"/>
+							<xs:element name="css" type="xs:string"/>
+							<xs:element name="xsl" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="personalPageData" type="personalPageDataType" minOccurs="0"/>
+				<xs:element name="blogData" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="title"/>
+							<xs:element name="person" type="personalInformationType"/>
+							<xs:element name="articles" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="article" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="title" type="xs:string"/>
+													<xs:element name="author"/>
+													<xs:element name="section" type="xs:string" minOccurs="0"/>
+													<xs:element name="date" type="xs:string"/>
+													<xs:element name="text" type="brMixedType"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="galleryData" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name"/>
+							<xs:element name="person" type="personalInformationType"/>
+							<xs:element name="collections">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="collection">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="title" type="xs:string" minOccurs="0"/>
+													<xs:element name="section" type="xs:string" minOccurs="0"/>
+													<xs:element name="rowPhotos" type="xs:int"/>
+													<xs:element name="date" type="xs:string"/>
+													<xs:element name="photos">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="photo" type="photoType" maxOccurs="unbounded"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="lastModified" type="xs:string" use="required"/>
+			<xs:attribute name="author" type="xs:string" use="required"/>
+			<xs:attribute name="presentationName" type="xs:string" use="required"/>
+			<xs:attribute name="presentationFullName" use="required"/>
+			<xs:attribute name="presentationType" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
