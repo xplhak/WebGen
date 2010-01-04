@@ -47,7 +47,8 @@
         }
         
         if ($_SESSION['step_all_3']['action'] == 'edit') {
-            
+            unset($_SESSION['step_ppedit_5']);
+             
             // preskoceni 4teho kroku u editace
             $_SESSION['steps'] = array('1', '2', '3', '5');
             

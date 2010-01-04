@@ -23,6 +23,15 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
+// oprava vyberu enrollment X registration pokud se uzivatel vrati zpet , J. Uhyrek
+$(document).ready(function(){
+  if(session['step_all_2']['user_account'] != 'registration') {
+     $("input[name='user_account'][value='enrolment']").attr('checked', 'checked');
+  }
+});
+
+
+
 function add_pass(str) {
     $("#li_pass_repeat").hide();
     $("#li_css_change").show();

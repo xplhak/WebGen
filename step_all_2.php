@@ -81,9 +81,8 @@
             fclose($file);
             chmod("./profiles/".$_SESSION['step_all_2']['user_name'].".xml", 0777);
 
-            // vymazani hodnoty hesla ze sessions
-            $_SESSION['step_all_2']['user_pass'] = '';
-            $_SESSION['step_all_2']['user_pass_rep'] = '';
+
+            $_SESSION['step_all_2']['user_account'] = 'enrolment';
             $_SESSION['user_loged_in'] = true;
             
             // vytvorim adresar, aby byl uzivatel vytvoren
@@ -134,6 +133,9 @@
               exit();
             }
         }
+        // vymazani hodnoty hesla ze sessions
+        $_SESSION['step_all_2']['user_pass'] = '';
+        $_SESSION['step_all_2']['user_pass_rep'] = '';
     }
 
 ?>
@@ -207,7 +209,7 @@
             </label>
         </li>
         
-        <li id="li_css_change" <?php if (!isset($_SESSION['step_all_2']['user_name']) || isUserFree($_SESSION['step_all_2']['user_name'])) { echo "style=\"display: none;\""; } ?> >
+        <li id="li_css_change" <?php if ($_SESSION['step_all_2']['user_account'] == 'registration' || !isset($_SESSION['step_all_2']['user_name']) || isUserFree($_SESSION['step_all_2']['user_name'])) { echo "style=\"display: none;\""; } ?> >
             <label>
                 <span id="span_css_change"></span> <?php echo $webgen_css_change[$language]; ?>
                 <input type="checkbox" id="css_change" name="css_change" <?php if (isset($_SESSION['step_all_2']['css_change'])) { echo "checked=\"checked\""; } ?> onclick="show_choice()" />

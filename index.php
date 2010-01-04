@@ -77,10 +77,21 @@
             if (empty($_SESSION['step_all_2']['css_choice']) || $_SESSION['step_all_2']['css_choice'] != 'blind' || $_GET['step'] < 3) {
                 echo "<link href=\"./css/base.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" />";
             }
+
+            // kvuli nacitani souboru pp kdyz neni k dispozici ppedit
+            // puvodni $_GET['type'] ulozim do $TYPE ktere se pouzije ve zbytku index.php pro nacitani souboru J. Uhyrek
             
+            $TYPE = $_GET['type'];
+
+            // pokud probiha edtace a soubor s type ppedit neexistuje pouzije se soubor s type pp J. Uhyrek
+            if ($TYPE == 'ppedit' && !is_readable("./step_{$TYPE}_{$_GET['step']}.php")) {
+              $TYPE = 'pp';
+            }
+
+
             // styl pre konkretny krok
-            if (is_readable("./css/step_{$_GET['type']}_{$_GET['step']}.css")) {
-                echo "<link href=\"./css/step_{$_GET['type']}_{$_GET['step']}.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" />\n";
+            if (is_readable("./css/step_{$TYPE}_{$_GET['step']}.css")) {
+                echo "<link href=\"./css/step_{$TYPE}_{$_GET['step']}.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" />\n";
             }
             if (!empty($_SESSION['step_all_2']['css_choice']) && $_SESSION['step_all_2']['css_choice'] == 'glasses') {
                 echo "<link href=\"./css/glasses.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" />\n";
@@ -130,8 +141,8 @@
             $_SESSION = array_map_r('stripslashes', $_SESSION );
         
             // javascript pre konkretny krok
-            if (is_readable("./jsc/step_{$_GET['type']}_{$_GET['step']}.js")) {
-              echo "<script type=\"text/javascript\" src=\"./jsc/step_{$_GET['type']}_{$_GET['step']}.js\"></script>\n";
+            if (is_readable("./jsc/step_{$TYPE}_{$_GET['step']}.js")) {
+              echo "<script type=\"text/javascript\" src=\"./jsc/step_{$TYPE}_{$_GET['step']}.js\"></script>\n";
             }
         
          ?>
@@ -144,7 +155,7 @@
 
             // ak je pozadovana stranka fyzicky pritomna na disku, zobrazim prednostne ju
             // v pripade, ze nie je, generujem chybu 404 
-            if (is_readable("./step_{$_GET['type']}_{$_GET['step']}.php")) {
+            if (is_readable("./step_{$TYPE}_{$_GET['step']}.php")) {
                 
                 // kontrola, zda je uživatel zalogován
                 if (($_GET['step'] != '1' && $_GET['step'] != '2') && $_SESSION['user_loged_in'] != true) {
@@ -153,13 +164,13 @@
                 }
                 
                 else {
-                    require_once "./step_{$_GET['type']}_{$_GET['step']}.php";
+                    require_once "./step_{$TYPE}_{$_GET['step']}.php";
                 
                     // po spracovani odoslaneho formulara je redirect na dalsi krok
                     if (count($_POST)) {
                         $next_step = $_SESSION['steps'][array_search($_GET['step'], $_SESSION['steps']) + 1];
                         if (!isset($next_type)) {
-                            $next_type = $_GET['type'];
+                            $next_type = $_GET['type']; // tady se necha puvodni $_GET['type'] J. Uhyrek
                         }
                         header("Location: ./index.php?step={$next_step}&type={$next_type}");
                         exit();

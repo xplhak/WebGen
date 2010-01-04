@@ -28,7 +28,7 @@
     $_page_title = $step_desc[$language]." ".(array_search($_GET['step'], $_SESSION['steps'])+1)." - ".$webgen_presentation_type_choice_title[$language];
    
     // spracovanie formulara
-    if (count($_POST)) {
+if (count($_POST)) {
         // sem spracovanie/osetrenie prislich premennych
 
         // smazani obsahu nevyplnenych promennych
@@ -57,6 +57,7 @@
         
         array_push ($_SESSION['steps'], '5');
         $next_type = $_SESSION['step_all_4']['presentation_type'];
+
     }
  
 ?>

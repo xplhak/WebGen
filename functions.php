@@ -408,327 +408,328 @@
     }
     
     // nasteni dat z XML - J. Uhyrek
-    function loadToSession() {
+ function loadToSession($data) {
 
       //  person data
-        if($_SESSION['step_ppedit_5']['degree_action'] != 'delete' && isset($_SESSION['loaded_data']['person']['prefix'])) {
-            $_SESSION['step_ppedit_6']['degree_front_data'] = $_SESSION['loaded_data']['person']['prefix'];
-        }
+      if($_SESSION['step_pp_5']['degree_action'] != 'delete' && isset($data['person']['prefix'])) {
+        $_SESSION['step_pp_6']['degree_front_data'] = $data['person']['prefix'];
+      }
 
-        if(isset($_SESSION['loaded_data']['person']['fullName'])) {
-            $_SESSION['step_ppedit_6']['name_data'] = $_SESSION['loaded_data']['person']['fullName'];
-        }
+      if(isset($data['person']['fullName'])) {
+        $_SESSION['step_pp_6']['name_data'] = $data['person']['fullName'];
+      }
 
-        if($_SESSION['step_ppedit_5']['degree_action'] != 'delete' && isset($_SESSION['loaded_data']['person']['sufix'])) {
-            $_SESSION['step_ppedit_6']['degree_back_data'] = $_SESSION['loaded_data']['person']['sufix'];
-        }
+      if($_SESSION['step_pp_5']['degree_action'] != 'delete' && isset($data['person']['sufix'])) {
+        $_SESSION['step_pp_6']['degree_back_data'] = $data['person']['sufix'];
+      }
 
-        // photo
-        if ($_SESSION['step_ppedit_5']['photo_action'] != 'delete' && isset($_SESSION['loaded_data']['person']['photo']['url'])) {
-            $_SESSION['step_ppedit_7']['photo_alt_data'] = $_SESSION['loaded_data']['person']['photo']['alt'];
-            $_SESSION['step_ppedit_7']['photo_src_data'] = $_SESSION['loaded_data']['person']['photo']['url'];
-        }
+      // photo
+      if ($_SESSION['step_pp_5']['photo_action'] != 'delete' && isset($data['person']['photo']['url'])) {
+        $_SESSION['step_pp_7']['photo_alt_data'] = $data['person']['photo']['alt'];
+        $_SESSION['step_pp_7']['photo_src_data'] = $data['person']['photo']['url'];
+      }
 
-        // contact
-        if ($_SESSION['step_ppedit_5']['contact_email_action'] != 'delete' && isset($_SESSION['loaded_data']['contacts']['email'])) {
-            $_SESSION['step_ppedit_8']['email_data'] = $_SESSION['loaded_data']['contacts']['email'];
-        }
-        if ($_SESSION['step_ppedit_5']['contact_address_action'] != 'delete' && isset($_SESSION['loaded_data']['contacts']['homeAddress']['address'])) {
-            $_SESSION['step_ppedit_8']['street_data'] = $_SESSION['loaded_data']['contacts']['homeAddress']['address']['street'];
-            $_SESSION['step_ppedit_8']['housenumber_data'] = $_SESSION['loaded_data']['contacts']['homeAddress']['address']['houseNumber'];
-            $_SESSION['step_ppedit_8']['city_data'] = $_SESSION['loaded_data']['contacts']['homeAddress']['address']['city'];
-            $_SESSION['step_ppedit_8']['postcode_data'] = $_SESSION['loaded_data']['contacts']['homeAddress']['address']['zipCode'];
-            $_SESSION['step_ppedit_8']['state_data'] = $_SESSION['loaded_data']['contacts']['homeAddress']['address']['country'];
-        }
-        if ($_SESSION['step_ppedit_5']['contact_cellular_action'] != 'delete' && isset($_SESSION['loaded_data']['contacts']['phoneNumbers']['mobilePhone'])) {
-            $_SESSION['step_ppedit_8']['cellular_data'] = $_SESSION['loaded_data']['contacts']['phoneNumbers']['mobilePhone'];
-        }
-        if ($_SESSION['step_ppedit_5']['contact_phone_action'] != 'delete' && isset($_SESSION['loaded_data']['contacts']['phoneNumbers']['phone'])) {
-            $_SESSION['step_ppedit_8']['phone_data'] = $_SESSION['loaded_data']['contacts']['phoneNumbers']['phone'];
-        }
-        if ($_SESSION['step_ppedit_5']['contact_fax_action'] != 'delete' && isset($_SESSION['loaded_data']['contacts']['phoneNumbers']['fax'])) {
-            $_SESSION['step_ppedit_8']['fax_data'] = $_SESSION['loaded_data']['contacts']['phoneNumbers']['fax'];
-        }
-        if ($_SESSION['step_ppedit_5']['contact_icq_action'] != 'delete' && isset($_SESSION['loaded_data']['contacts']['communicationProtocols']['icq'])) {
-            $_SESSION['step_ppedit_8']['icq_data'] = $_SESSION['loaded_data']['contacts']['communicationProtocols']['icq'];
-        }
-        if ($_SESSION['step_ppedit_5']['contact_skype_action'] != 'delete' && isset($_SESSION['loaded_data']['contacts']['communicationProtocols']['skype'])) {
-            $_SESSION['step_ppedit_8']['skype_data'] = $_SESSION['loaded_data']['contacts']['communicationProtocols']['skype'];
-        }
-        if ($_SESSION['step_ppedit_5']['contact_otherprotocols_action'] != 'delete' && isset($_SESSION['loaded_data']['contacts']['communicationProtocols'])) {
-            $_SESSION['step_ppedit_8']['jabber_data'] = $_SESSION['loaded_data']['contacts']['communicationProtocols']['jabber'];
-            $_SESSION['step_ppedit_8']['msn_data'] = $_SESSION['loaded_data']['contacts']['communicationProtocols']['msn'];
-            $_SESSION['step_ppedit_8']['aim_data'] = $_SESSION['loaded_data']['contacts']['communicationProtocols']['aim'];
-            $_SESSION['step_ppedit_8']['irc_data'] = $_SESSION['loaded_data']['contacts']['communicationProtocols']['irc'];
-        }
+      // contact
+      if ($_SESSION['step_pp_5']['contact_email_action'] != 'delete' && isset($data['contacts']['email'])) {
+        $_SESSION['step_pp_8']['email_data'] = $data['contacts']['email'];
+      }
+      if ($_SESSION['step_pp_5']['contact_address_action'] != 'delete' && isset($data['contacts']['homeAddress']['address'])) {
+        $_SESSION['step_pp_8']['street_data'] = $data['contacts']['homeAddress']['address']['street'];
+        $_SESSION['step_pp_8']['housenumber_data'] = $data['contacts']['homeAddress']['address']['houseNumber'];
+        $_SESSION['step_pp_8']['city_data'] = $data['contacts']['homeAddress']['address']['city'];
+        $_SESSION['step_pp_8']['postcode_data'] = $data['contacts']['homeAddress']['address']['zipCode'];
+        $_SESSION['step_pp_8']['state_data'] = $data['contacts']['homeAddress']['address']['country'];
+      }
+      if ($_SESSION['step_pp_5']['contact_cellular_action'] != 'delete' && isset($data['contacts']['phoneNumbers']['mobilePhone'])) {
+        $_SESSION['step_pp_8']['cellular_data'] = $data['contacts']['phoneNumbers']['mobilePhone'];
+      }
+      if ($_SESSION['step_pp_5']['contact_phone_action'] != 'delete' && isset($data['contacts']['phoneNumbers']['phone'])) {
+        $_SESSION['step_pp_8']['phone_data'] = $data['contacts']['phoneNumbers']['phone'];
+      }
+      if ($_SESSION['step_pp_5']['contact_fax_action'] != 'delete' && isset($data['contacts']['phoneNumbers']['fax'])) {
+        $_SESSION['step_pp_8']['fax_data'] = $data['contacts']['phoneNumbers']['fax'];
+      }
+      if ($_SESSION['step_pp_5']['contact_icq_action'] != 'delete' && isset($data['contacts']['communicationProtocols']['icq'])) {
+        $_SESSION['step_pp_8']['icq_data'] = $data['contacts']['communicationProtocols']['icq'];
+      }
+      if ($_SESSION['step_pp_5']['contact_skype_action'] != 'delete' && isset($data['contacts']['communicationProtocols']['skype'])) {
+        $_SESSION['step_pp_8']['skype_data'] = $data['contacts']['communicationProtocols']['skype'];
+      }
+      if ($_SESSION['step_pp_5']['contact_otherprotocols_action'] != 'delete' && isset($data['contacts']['communicationProtocols'])) {
+        $_SESSION['step_pp_8']['jabber_data'] = $data['contacts']['communicationProtocols']['jabber'];
+        $_SESSION['step_pp_8']['msn_data'] = $data['contacts']['communicationProtocols']['msn'];
+        $_SESSION['step_pp_8']['aim_data'] = $data['contacts']['communicationProtocols']['aim'];
+        $_SESSION['step_pp_8']['irc_data'] = $data['contacts']['communicationProtocols']['irc'];
+      }
 
-        // university
-        if(isset($_SESSION['loaded_data']['school']['university'])) {
-            $_SESSION['step_ppedit_9']['university_data'] = $_SESSION['loaded_data']['school']['university'];
+      // university
+      if(isset($data['school']['university'])) {
+        $_SESSION['step_pp_9']['university_data'] = $data['school']['university'];
+      }
+      if( $_SESSION['step_pp_5']['university_faculty_action'] != 'delete' && isset($data['school']['faculty']) ) {
+        $_SESSION['step_pp_9']['faculty_data'] = $data['school']['faculty'];
+      }
+      if($_SESSION['step_pp_5']['university_specialization_action'] != 'delete' && isset( $data['school']['student']['branch'])) {
+        $_SESSION['step_pp_9']['specialization_data'] = $data['school']['student']['branch'];
+      }
+      if( $_SESSION['step_pp_5']['university_year_action'] != 'delete' && isset( $data['school']['student']['grade'])) {
+        $_SESSION['step_pp_9']['year_data'] = $data['school']['student']['grade'];
+      }
+      if( $_SESSION['step_pp_5']['university_department_action'] != 'delete' && isset($data['school']['employee']['department'])) {
+        $_SESSION['step_pp_9']['department_data'] = $data['school']['employee']['department'];
+      }
+      if( $_SESSION['step_pp_5']['university_position_action'] != 'delete' && isset( $data['school']['employee']['positions']['position'])) {
+        $_SESSION['step_pp_9']['position_data'] = $data['school']['employee']['positions']['position'];
+      }
+      if( $_SESSION['step_pp_5']['university_office_action'] != 'delete' && isset($data['school']['employee']['office']) ) {
+        $_SESSION['step_pp_9']['office_data'] = $data['school']['employee']['office'];
+      }
+      if( $_SESSION['step_pp_5']['university_hour_action'] != 'delete' && isset($data['school']['employee']['consultationHours'])) {
+        if(isset($data['school']['employee']['consultationHours']['consultation'][0])) {
+          foreach( $data['school']['employee']['consultationHours']['consultation'] as $consultation ) {
+            $_SESSION['step_pp_9']['hour_day_data'][] = $consultation['day'];
+            $_SESSION['step_pp_9']['hour_from_data'][] = $consultation['from'];
+            $_SESSION['step_pp_9']['hour_to_data'][] = $consultation['to'];
+          }
+       } else { 
+          $consultation = $data['school']['employee']['consultationHours']['consultation'];
+          $_SESSION['step_pp_9']['hour_day_data'][] = $consultation['day'];
+          $_SESSION['step_pp_9']['hour_from_data'][] = $consultation['from'];
+          $_SESSION['step_pp_9']['hour_to_data'][] = $consultation['to'];
         }
-        if( $_SESSION['step_ppedit_5']['university_faculty_action'] != 'delete' && isset($_SESSION['loaded_data']['school']['faculty']) ) {
-            $_SESSION['step_ppedit_9']['faculty_data'] = $_SESSION['loaded_data']['school']['faculty'];
-        }
-        if($_SESSION['step_ppedit_5']['university_specialization_action'] != 'delete' && isset( $_SESSION['loaded_data']['school']['student']['branch'])) {
-            $_SESSION['step_ppedit_9']['specialization_data'] = $_SESSION['loaded_data']['school']['student']['branch'];
-        }
-        if( $_SESSION['step_ppedit_5']['university_year_action'] != 'delete' && isset( $_SESSION['loaded_data']['school']['student']['grade'])) {
-            $_SESSION['step_ppedit_9']['year_data'] = $_SESSION['loaded_data']['school']['student']['grade'];
-        }
-        if( $_SESSION['step_ppedit_5']['university_department_action'] != 'delete' && isset($_SESSION['loaded_data']['school']['employee']['department'])) {
-            $_SESSION['step_ppedit_9']['department_data'] = $_SESSION['loaded_data']['school']['employee']['department'];
-        }
-        if( $_SESSION['step_ppedit_5']['university_position_action'] != 'delete' && isset( $_SESSION['loaded_data']['school']['employee']['positions']['position'])) {
-            $_SESSION['step_ppedit_9']['position_data'] = $_SESSION['loaded_data']['school']['employee']['positions']['position'];
-        }
-        if( $_SESSION['step_ppedit_5']['university_office_action'] != 'delete' && isset($_SESSION['loaded_data']['school']['employee']['office']) ) {
-            $_SESSION['step_ppedit_9']['office_data'] = $_SESSION['loaded_data']['school']['employee']['office'];
-        }
-        if( $_SESSION['step_ppedit_5']['university_hour_action'] != 'delete' && isset($_SESSION['loaded_data']['school']['employee']['consultationHours'])) {
-            if(isset($_SESSION['loaded_data']['school']['employee']['consultationHours']['consultation'][0])) {
-                foreach( $_SESSION['loaded_data']['school']['employee']['consultationHours']['consultation'] as $consultation ) {
-                    $_SESSION['step_ppedit_9']['hour_day_data'][] = $consultation['day'];
-                    $_SESSION['step_ppedit_9']['hour_from_data'][] = $consultation['from'];
-                    $_SESSION['step_ppedit_9']['hour_to_data'][] = $consultation['to'];
-                }
-         } else { 
-                $consultation = $_SESSION['loaded_data']['school']['employee']['consultationHours']['consultation'];
-                $_SESSION['step_ppedit_9']['hour_day_data'][] = $consultation['day'];
-                $_SESSION['step_ppedit_9']['hour_from_data'][] = $consultation['from'];
-                $_SESSION['step_ppedit_9']['hour_to_data'][] = $consultation['to'];
-            }
-        }
-        if( $_SESSION['step_ppedit_5']['university_departmentphone_action'] != 'delete' && isset( $_SESSION['loaded_data']['school']['employee']['workPhone'])) {
-            $_SESSION['step_ppedit_9']['departmentphone_data'] = $_SESSION['loaded_data']['school']['employee']['workPhone'];
-        }
-        if( $_SESSION['step_ppedit_5']['university_schooladdress_action'] != 'delete' && isset($_SESSION['loaded_data']['school']['schoolAddress']['address'])) {
-            $_SESSION['step_ppedit_9']['school_street_data'] = $_SESSION['loaded_data']['school']['schoolAddress']['address']['street'];
-            $_SESSION['step_ppedit_9']['school_housenumber_data'] = $_SESSION['loaded_data']['school']['schoolAddress']['address']['houseNumber'];
-            $_SESSION['step_ppedit_9']['school_city_data'] = $_SESSION['loaded_data']['school']['schoolAddress']['address']['city'];
-            $_SESSION['step_ppedit_9']['school_postcode_data'] = $_SESSION['loaded_data']['school']['schoolAddress']['address']['zipCode'];
-            $_SESSION['step_ppedit_9']['school_state_data'] = $_SESSION['loaded_data']['school']['schoolAddress']['address']['country'];
-        }
+      }
+      if( $_SESSION['step_pp_5']['university_departmentphone_action'] != 'delete' && isset( $data['school']['employee']['workPhone'])) {
+        $_SESSION['step_pp_9']['departmentphone_data'] = $data['school']['employee']['workPhone'];
+      }
+      if( $_SESSION['step_pp_5']['university_schooladdress_action'] != 'delete' && isset($data['school']['schoolAddress']['address'])) {
+        $_SESSION['step_pp_9']['school_street_data'] = $data['school']['schoolAddress']['address']['street'];
+        $_SESSION['step_pp_9']['school_housenumber_data'] = $data['school']['schoolAddress']['address']['houseNumber'];
+        $_SESSION['step_pp_9']['school_city_data'] = $data['school']['schoolAddress']['address']['city'];
+        $_SESSION['step_pp_9']['school_postcode_data'] = $data['school']['schoolAddress']['address']['zipCode'];
+        $_SESSION['step_pp_9']['school_state_data'] = $data['school']['schoolAddress']['address']['country'];
+      }
 
-        if( $_SESSION['step_ppedit_5']['university_schoolpages_action'] != 'delete' && isset($_SESSION['loaded_data']['school']['universityUrl']['webUrl']['url']) ) {
-            $_SESSION['step_ppedit_9']['schoolpages_data_data'] = $_SESSION['loaded_data']['school']['universityUrl']['webUrl']['url'];
-        }
+      if( $_SESSION['step_pp_5']['university_schoolpages_action'] != 'delete' && isset($data['school']['universityUrl']['webUrl']['url']) ) {
+        $_SESSION['step_pp_9']['schoolpages_data_data'] = $data['school']['universityUrl']['webUrl']['url'];
+      }
 
-        if( $_SESSION['step_ppedit_5']['university_facultypages_action'] != 'delete' && isset($_SESSION['loaded_data']['school']['facultyUrl']['webUrl']['url'])) {
-            $_SESSION['step_ppedit_9']['facultypages_data'] = $_SESSION['loaded_data']['school']['facultyUrl']['webUrl']['url'];
-        }
-        if( $_SESSION['step_ppedit_5']['university_project_action'] != 'delete' && isset($_SESSION['loaded_data']['school']['projects']['project'])) {
-            if(isset($_SESSION['loaded_data']['school']['projects']['project'][0])) {
-                foreach ($_SESSION['loaded_data']['school']['projects']['project'] as $project) {
-                    $_SESSION['step_ppedit_9']['project_name_data'][] = $project['name'];
-                    $_SESSION['step_ppedit_9']['project_description_data'][] = $project['description'];
-                    if (isset($project['coWorkers']['coWorker'][0])) {
-                        foreach ( $project['coWorkers']['coWorker'] as $coWorker) {
-                            $_SESSION['step_ppedit_9']['project_coauthor0_data'][] = $coWorker['person']['fullname'];
-                        }
-                    } else {
-                        $coWorker = $project['coWorkers']['coWorker'];
-                        $_SESSION['step_ppedit_9']['project_coauthor0_data'][] = $coWorker['person']['fullname'];
-                    }
-                    $_SESSION['step_ppedit_9']['project_year_data'][] = $project['yearFinished'];
-                    $_SESSION['step_ppedit_9']['project_www_data'][] = $project['projectUrl']['webUrl']['url'];
-                }
+      if( $_SESSION['step_pp_5']['university_facultypages_action'] != 'delete' && isset($data['school']['facultyUrl']['webUrl']['url'])) {
+        $_SESSION['step_pp_9']['facultypages_data'] = $data['school']['facultyUrl']['webUrl']['url'];
+      }
+      if( $_SESSION['step_pp_5']['university_project_action'] != 'delete' && isset($data['school']['projects']['project'])) {
+        if(isset($data['school']['projects']['project'][0])) {
+          foreach ($data['school']['projects']['project'] as $project) {
+            $_SESSION['step_pp_9']['project_name_data'][] = $project['name'];
+            $_SESSION['step_pp_9']['project_description_data'][] = $project['description'];
+            if (isset($project['coWorkers']['coWorker'][0])) {
+              foreach ( $project['coWorkers']['coWorker'] as $coWorker) {
+                $_SESSION['step_pp_9']['project_coauthor0_data'][] = $coWorker['person']['fullname'];
+              }
             } else {
-                    $project = $_SESSION['loaded_data']['school']['projects']['project'];
-                    $_SESSION['step_ppedit_9']['project_name_data'][] = $project['name'];
-                    $_SESSION['step_ppedit_9']['project_description_data'][] = $project['description'];
-                    if (isset($project['coWorkers']['coWorker'][0])) {
-                        foreach ( $project['coWorkers']['coWorker'] as $coWorker) {
-                            $_SESSION['step_ppedit_9']['project_coauthor0_data'][] = $coWorker['person']['fullname'];
-                        }
-                    } else {
-                        $coWorker = $project['coWorkers']['coWorker'];
-                        $_SESSION['step_ppedit_9']['project_coauthor0_data'][] = $coWorker['person']['fullname'];
-                    }
-                    $_SESSION['step_ppedit_9']['project_year_data'][] = $project['yearFinished'];
-                    $_SESSION['step_ppedit_9']['project_www_data'][] = $project['projectUrl']['webUrl']['url'];
+              $coWorker = $project['coWorkers']['coWorker'];
+              $_SESSION['step_pp_9']['project_coauthor0_data'][] = $coWorker['person']['fullname'];
             }
-        }
-
-        // firm
-        if (isset($_SESSION['loaded_data']['business']['businessName'])) {
-            $_SESSION['step_ppedit_10']['firmname_data'] = $_SESSION['loaded_data']['business']['businessName'];
-        }
-        if($_SESSION['step_ppedit_5']['firm_ic_action'] != 'delete' && isset($_SESSION['loaded_data']['business']['id'])) {
-            $_SESSION['step_ppedit_10']['ic_data'] = $_SESSION['loaded_data']['business']['id'];
-        }
-
-        if($_SESSION['step_ppedit_5']['firm_direction_action'] != 'delete' && isset($_SESSION['loaded_data']['business']['directions']['direction'])) {
-            if(isset($_SESSION['loaded_data']['business']['directions']['direction'][0])) {
-                foreach($_SESSION['loaded_data']['business']['directions']['direction'] as $direction) {
-                    $_SESSION['step_ppedit_10']['direction_data'][] = $direction;
-                }
-            } else { 
-                $direction = $_SESSION['loaded_data']['business']['directions']['direction'];
-                $_SESSION['step_ppedit_10']['direction_data'][] = $direction;
-            }
-        }
-
-        if($_SESSION['step_ppedit_5']['firm_workload_action'] != 'delete' && isset($_SESSION['loaded_data']['business']['workloads']['workload'])) {
-            if(isset($_SESSION['loaded_data']['business']['workloads']['workload'][0])) {
-                foreach($_SESSION['loaded_data']['business']['workloads']['workload'] as $workload) {
-                    $_SESSION['step_ppedit_10']['workload_data'][] = $workload;
-                }
-            } else { 
-                $workload = $_SESSION['loaded_data']['business']['workloads']['workload'];
-                $_SESSION['step_ppedit_10']['workload_data'] = $workload;
-            }
-        }
-
-        if($_SESSION['step_ppedit_5']['firm_position_action'] != 'delete' && isset($_SESSION['loaded_data']['business']['position'])) {
-            $_SESSION['step_ppedit_10']['position_data'] = $_SESSION['loaded_data']['business']['position'];
-        }
-
-        if($_SESSION['step_ppedit_5']['firm_address_action'] != 'delete' && isset( $_SESSION['loaded_data']['business']['businessAddress']['address'])) {
-            $_SESSION['step_ppedit_10']['firm_street_data'] = $_SESSION['loaded_data']['business']['businessAddress']['address']['street'];
-            $_SESSION['step_ppedit_10']['firm_city_data'] = $_SESSION['loaded_data']['business']['businessAddress']['address']['city'];
-            $_SESSION['step_ppedit_10']['firm_postcode_data'] = $_SESSION['loaded_data']['business']['businessAddress']['address']['zipCode'];
-            $_SESSION['step_ppedit_10']['firm_state_data'] = $_SESSION['loaded_data']['business']['businessAddress']['address']['country'];
-        }
-
-        if($_SESSION['step_ppedit_5']['firm_www_action'] != 'delete' && isset( $_SESSION['loaded_data']['business']['businessUrl']['webUrl']['url'])) {
-            $_SESSION['step_ppedit_10']['www_data'] = $_SESSION['loaded_data']['business']['businessUrl']['webUrl']['url'];
-        }
-
-        if($_SESSION['step_ppedit_5']['firm_add_action'] != 'delete' && isset($_SESSION['loaded_data']['business']['otherInformation'])) {
-            $_SESSION['step_ppedit_10']['www_data'] = $_SESSION['loaded_data']['business']['otherInformation'];
-        }
-
-        // hobies
-        if($_SESSION['step_ppedit_5']['hobby_action'] != 'delete' && isset($_SESSION['loaded_data']['hobbies'])) {
-            if(isset($_SESSION['loaded_data']['hobbies']['hobby'][0])) {
-                foreach($_SESSION['loaded_data']['hobbies']['hobby'] as $hobby) {
-                    $_SESSION['step_ppedit_11']['hobby_data'][] = $hobby;
-                }
+            $_SESSION['step_pp_9']['project_year_data'][] = $project['yearFinished'];
+            $_SESSION['step_pp_9']['project_www_data'][] = $project['projectUrl']['webUrl']['url'];
+          }
+        } else {
+            $project = $data['school']['projects']['project'];
+            $_SESSION['step_pp_9']['project_name_data'][] = $project['name'];
+            $_SESSION['step_pp_9']['project_description_data'][] = $project['description'];
+            if (isset($project['coWorkers']['coWorker'][0])) {
+              foreach ( $project['coWorkers']['coWorker'] as $coWorker) {
+                $_SESSION['step_pp_9']['project_coauthor0_data'][] = $coWorker['person']['fullname'];
+              }
             } else {
-                $hobby = $_SESSION['loaded_data']['hobbies']['hobby'];
-                $_SESSION['step_ppedit_11']['hobby_data'][] = $hobby;
+              $coWorker = $project['coWorkers']['coWorker'];
+              $_SESSION['step_pp_9']['project_coauthor0_data'][] = $coWorker['person']['fullname'];
             }
+            $_SESSION['step_pp_9']['project_year_data'][] = $project['yearFinished'];
+            $_SESSION['step_pp_9']['project_www_data'][] = $project['projectUrl']['webUrl']['url'];
         }
+      }
 
-        // knowledges
-        if($_SESSION['step_ppedit_5']['knowledge_action'] != 'delete' && isset($_SESSION['loaded_data']['knowledges']['knowledge'])) {
-            if(isset($_SESSION['loaded_data']['knowledges']['knowledge'][0])) {
-                foreach($_SESSION['loaded_data']['knowledges']['knowledge'] as $knowledge) {
-                    $_SESSION['step_ppedit_12']['knowledge_data'][] = $knowledge;
-                }
-            } else {
-                $knowledge = $_SESSION['loaded_data']['knowledges']['knowledge'];
-                $_SESSION['step_ppedit_12']['knowledge_data'][] = $knowledge;
-            }
-        }
+      // firm
+      if (isset($data['business']['businessName'])) {
+        $_SESSION['step_pp_10']['firmname_data'] = $data['business']['businessName'];
+      }
+      if($_SESSION['step_pp_5']['firm_ic_action'] != 'delete' && isset($data['business']['id'])) {
+        $_SESSION['step_pp_10']['ic_data'] = $data['business']['id'];
+      }
 
-        //birthdate
-        if ($_SESSION['step_ppedit_5']['birthdate_action'] != 'delete' && isset( $_SESSION['loaded_data']['birth'])) {
-            $_SESSION['step_ppedit_13']['birthdate_data'] = $_SESSION['loaded_data']['birth']['date'];
-            $_SESSION['step_ppedit_13']['birthplace_data'] = $_SESSION['loaded_data']['birth']['place'];
+      if($_SESSION['step_pp_5']['firm_direction_action'] != 'delete' && isset($data['business']['directions']['direction'])) {
+        if(isset($data['business']['directions']['direction'][0])) {
+          foreach($data['business']['directions']['direction'] as $direction) {
+            $_SESSION['step_pp_10']['direction_data'][] = $direction;
+          }
+        } else { 
+          $direction = $data['business']['directions']['direction'];
+          $_SESSION['step_pp_10']['direction_data'][] = $direction;
         }
-            
-        //cv 
-        if (isset($_SESSION['loaded_data']['cv']['cvEmail'])) {
-            $_SESSION['step_ppedit_14']['email_cv_data'] = $_SESSION['loaded_data']['cv']['cvEmail'];
-        }
-        if (isset($_SESSION['loaded_data']['cv']['cvAddress']['address'])) {
-            $_SESSION['step_ppedit_14']['street_cv_data'] = $_SESSION['loaded_data']['cv']['cvAddress']['address']['street'];
-            $_SESSION['step_ppedit_14']['housenumber_cv_data'] = $_SESSION['loaded_data']['cv']['cvAddress']['address']['houseNumber'];
-            $_SESSION['step_ppedit_14']['city_cv_data'] = $_SESSION['loaded_data']['cv']['cvAddress']['address']['city'];
-            $_SESSION['step_ppedit_14']['postcode_cv_data'] = $_SESSION['loaded_data']['cv']['cvAddress']['address']['zipCode'];
-            $_SESSION['step_ppedit_14']['state_cv_data'] = $_SESSION['loaded_data']['cv']['cvAddress']['address']['country'];
-        }
-        if (isset($_SESSION['loaded_data']['cv']['cvPhone'])) {
-            $_SESSION['step_ppedit_14']['cellular_data'] = $_SESSION['loaded_data']['cv']['cvPhone'];
-        }
+      }
 
-        if ($_SESSION['step_pp_5']['cv_nationality_action'] != 'delete' && isset($_SESSION['loaded_data']['cv']['nationality'])) {
-            $_SESSION['step_ppedit_14']['nationality_cv_data'] = $_SESSION['loaded_data']['cv']['nationality'];
+      if($_SESSION['step_pp_5']['firm_workload_action'] != 'delete' && isset($data['business']['workloads']['workload'])) {
+        if(isset($data['business']['workloads']['workload'][0])) {
+          foreach($data['business']['workloads']['workload'] as $workload) {
+            $_SESSION['step_pp_10']['workload_data'][] = $workload;
+          }
+        } else { 
+          $workload = $data['business']['workloads']['workload'];
+          $_SESSION['step_pp_10']['workload_data'] = $workload;
         }
-        if ($_SESSION['step_pp_5']['cv_family_action'] != 'delete' && isset($_SESSION['loaded_data']['cv']['maritalStatus'])) {
-            $_SESSION['step_ppedit_14']['family_cv_data'] = $_SESSION['loaded_data']['cv']['maritalStatus'];
+      }
+
+      if($_SESSION['step_pp_5']['firm_position_action'] != 'delete' && isset($data['business']['position'])) {
+        $_SESSION['step_pp_10']['position_data'] = $data['business']['position'];
+      }
+
+      if($_SESSION['step_pp_5']['firm_address_action'] != 'delete' && isset( $data['business']['businessAddress']['address'])) {
+        $_SESSION['step_pp_10']['firm_street_data'] = $data['business']['businessAddress']['address']['street'];
+        $_SESSION['step_pp_10']['firm_city_data'] = $data['business']['businessAddress']['address']['city'];
+        $_SESSION['step_pp_10']['firm_postcode_data'] = $data['business']['businessAddress']['address']['zipCode'];
+        $_SESSION['step_pp_10']['firm_state_data'] = $data['business']['businessAddress']['address']['country'];
+      }
+
+      if($_SESSION['step_pp_5']['firm_www_action'] != 'delete' && isset( $data['business']['businessUrl']['webUrl']['url'])) {
+        $_SESSION['step_pp_10']['www_data'] = $data['business']['businessUrl']['webUrl']['url'];
+      }
+
+      if($_SESSION['step_pp_5']['firm_add_action'] != 'delete' && isset($data['business']['otherInformation'])) {
+        $_SESSION['step_pp_10']['www_data'] = $data['business']['otherInformation'];
+      }
+
+      // hobies
+      if($_SESSION['step_pp_5']['hobby_action'] != 'delete' && isset($data['hobbies'])) {
+        if(isset($data['hobbies']['hobby'][0])) {
+          foreach($data['hobbies']['hobby'] as $hobby) {
+            $_SESSION['step_pp_11']['hobby_data'][] = $hobby;
+          }
+        } else {
+          $hobby = $data['hobbies']['hobby'];
+          $_SESSION['step_pp_11']['hobby_data'][] = $hobby;
         }
-        if ($_SESSION['step_ppedit_5']['cv_school_action'] != 'delete' && isset($_SESSION['loaded_data']['courses']['course'])) {
-            if (isset($_SESSION['loaded_data']['courses']['course'][0])) {
-                foreach($_SESSION['loaded_data']['courses']['course'] as $course) {
-                    $_SESSION['step_ppedit_14']['edu_from_data'][] = $course['from'];
-                    $_SESSION['step_ppedit_14']['edu_to_data'][] = $course['to'];
-                    $_SESSION['step_ppedit_14']['edu_degree_data'][] = $course['level'];                        $_SESSION['step_ppedit_14']['edu_title_data'][] = $course['degree'];
-                    $_SESSION['step_ppedit_14']['edu_field_data'][] = $course['branch'];
-                    $_SESSION['step_ppedit_14']['edu_school_data'][] = $course['schoolName'];
-                }
-            } else {
-                $course = $_SESSION['loaded_data']['courses']['course'];
-                $_SESSION['step_ppedit_14']['edu_from_data'][] = $course['from'];
-                $_SESSION['step_ppedit_14']['edu_to_data'][] = $course['to'];
-                $_SESSION['step_ppedit_14']['edu_degree_data'][] = $course['level'];                        $_SESSION['step_ppedit_14']['edu_title_data'][] = $course['degree'];
-                $_SESSION['step_ppedit_14']['edu_field_data'][] = $course['branch'];
-                $_SESSION['step_ppedit_14']['edu_school_data'][] = $course['schoolName'];
-            }
+      }
+
+      // knowledges
+      if($_SESSION['step_pp_5']['knowledge_action'] != 'delete' && isset($data['knowledges']['knowledge'])) {
+        if(isset($data['knowledges']['knowledge'][0])) {
+          foreach($data['knowledges']['knowledge'] as $knowledge) {
+            $_SESSION['step_pp_12']['knowledge_data'][] = $knowledge;
+          }
+        } else {
+          $knowledge = $data['knowledges']['knowledge'];
+          $_SESSION['step_pp_12']['knowledge_data'][] = $knowledge;
         }
+      }
 
-        if ($_SESSION['step_ppedit_5']['cv_work_action'] != 'delete' && isset($_SESSION['loaded_data']['cv']['workExperiences']['work'])) {
-            if (isset($_SESSION['loaded_data']['cv']['workExperiences']['work'][0])) {
-                foreach ($_SESSION['loaded_data']['cv']['workExperiences']['work'] as $work) {
-                    $_SESSION['step_ppedit_14']['work_from_data'][] = $work['from'];
-                    $_SESSION['step_ppedit_14']['work_to_data'][] = $work['to'];
-                    $_SESSION['step_ppedit_14']['work_companyname_data'][] = $work['businessName'];
-                    $_SESSION['step_ppedit_14']['work_sphere_data'][] = $work['branch'];
-                    $_SESSION['step_ppedit_14']['work_pos_data'][] = $work['position'];
-                    $_SESSION['step_ppedit_14']['work_wload_data'][] = $work['workload'];
-                }
-            } else {
-                $work = $_SESSION['loaded_data']['cv']['workExperiences']['work'];
-                $_SESSION['step_ppedit_14']['work_from_data'][] = $work['from'];
-                $_SESSION['step_ppedit_14']['work_to_data'][] = $work['to'];
-                $_SESSION['step_ppedit_14']['work_companyname_data'][] = $work['businessName'];
-                $_SESSION['step_ppedit_14']['work_sphere_data'][] = $work['branch'];
-                $_SESSION['step_ppedit_14']['work_pos_data'][] = $work['position'];
-                $_SESSION['step_ppedit_14']['work_wload_data'][] = $work['workload'];
-            }
+      //birthdate
+      if ($_SESSION['step_pp_5']['birthdate_action'] != 'delete' && isset( $data['birth'])) {
+        $_SESSION['step_pp_13']['birthdate_data'] = $data['birth']['date'];
+        $_SESSION['step_pp_13']['birthplace_data'] = $data['birth']['place'];
+      }
+        
+      //cv 
+      if (isset($data['cv']['cvEmail'])) {
+        $_SESSION['step_pp_14']['email_cv_data'] = $data['cv']['cvEmail'];
+      }
+      if (isset($data['cv']['cvAddress']['address'])) {
+        $_SESSION['step_pp_14']['street_cv_data'] = $data['cv']['cvAddress']['address']['street'];
+        $_SESSION['step_pp_14']['housenumber_cv_data'] = $data['cv']['cvAddress']['address']['houseNumber'];
+        $_SESSION['step_pp_14']['city_cv_data'] = $data['cv']['cvAddress']['address']['city'];
+        $_SESSION['step_pp_14']['postcode_cv_data'] = $data['cv']['cvAddress']['address']['zipCode'];
+        $_SESSION['step_pp_14']['state_cv_data'] = $data['cv']['cvAddress']['address']['country'];
+      }
+      if (isset($data['cv']['cvPhone'])) {
+        $_SESSION['step_pp_14']['cellular_data'] = $data['cv']['cvPhone'];
+      }
+
+      if ($_SESSION['step_pp_5']['cv_nationality_action'] != 'delete' && isset($data['cv']['nationality'])) {
+        $_SESSION['step_pp_14']['nationality_cv_data'] = $data['cv']['nationality'];
+      }
+      if ($_SESSION['step_pp_5']['cv_family_action'] != 'delete' && isset($data['cv']['maritalStatus'])) {
+        $_SESSION['step_pp_14']['family_cv_data'] = $data['cv']['maritalStatus'];
+      }
+      if ($_SESSION['step_pp_5']['cv_school_action'] != 'delete' && isset($data['courses']['course'])) {
+        if (isset($data['courses']['course'][0])) {
+          foreach($data['courses']['course'] as $course) {
+            $_SESSION['step_pp_14']['edu_from_data'][] = $course['from'];
+            $_SESSION['step_pp_14']['edu_to_data'][] = $course['to'];
+            $_SESSION['step_pp_14']['edu_degree_data'][] = $course['level'];            $_SESSION['step_ppedit_14']['edu_title_data'][] = $course['degree'];
+            $_SESSION['step_pp_14']['edu_field_data'][] = $course['branch'];
+            $_SESSION['step_pp_14']['edu_school_data'][] = $course['schoolName'];
+          }
+        } else {
+          $course = $data['courses']['course'];
+          $_SESSION['step_pp_14']['edu_from_data'][] = $course['from'];
+          $_SESSION['step_pp_14']['edu_to_data'][] = $course['to'];
+          $_SESSION['step_pp_14']['edu_degree_data'][] = $course['level'];            $_SESSION['step_ppedit_14']['edu_title_data'][] = $course['degree'];
+          $_SESSION['step_pp_14']['edu_field_data'][] = $course['branch'];
+          $_SESSION['step_pp_14']['edu_school_data'][] = $course['schoolName'];
         }
+      }
 
-        if ($_SESSION['step_ppedit_5']['cv_knowledge_action'] != 'delete' && isset($_SESSION['loaded_data']['cv']['personalSkills'])) {
-            $_SESSION['step_ppedit_14']['it_degree_cv_data'] = $_SESSION['loaded_data']['cv']['personalSkills']['itSkills']['level'];
-            $_SESSION['step_ppedit_14']['it_detail_cv_data'] = $_SESSION['loaded_data']['cv']['personalSkills']['itSkills']['description'];
-
-            $_SESSION['step_ppedit_14']['driver_cv_data'] = $_SESSION['loaded_data']['cv']['personalSkills']['drivingLicence'];
-            $_SESSION['step_ppedit_14']['other_cv_data'] = $_SESSION['loaded_data']['cv']['personalSkills']['otherInformation'];
+      if ($_SESSION['step_pp_5']['cv_work_action'] != 'delete' && isset($data['cv']['workExperiences']['work'])) {
+        if (isset($data['cv']['workExperiences']['work'][0])) {
+          foreach ($data['cv']['workExperiences']['work'] as $work) {
+            $_SESSION['step_pp_14']['work_from_data'][] = $work['from'];
+            $_SESSION['step_pp_14']['work_to_data'][] = $work['to'];
+            $_SESSION['step_pp_14']['work_companyname_data'][] = $work['businessName'];
+            $_SESSION['step_pp_14']['work_sphere_data'][] = $work['branch'];
+            $_SESSION['step_pp_14']['work_pos_data'][] = $work['position'];
+            $_SESSION['step_pp_14']['work_wload_data'][] = $work['workload'];
+          }
+        } else {
+          $work = $data['cv']['workExperiences']['work'];
+          $_SESSION['step_pp_14']['work_from_data'][] = $work['from'];
+          $_SESSION['step_pp_14']['work_to_data'][] = $work['to'];
+          $_SESSION['step_pp_14']['work_companyname_data'][] = $work['businessName'];
+          $_SESSION['step_pp_14']['work_sphere_data'][] = $work['branch'];
+          $_SESSION['step_pp_14']['work_pos_data'][] = $work['position'];
+          $_SESSION['step_pp_14']['work_wload_data'][] = $work['workload'];
         }
+      }
 
-        // texty
-        if($_SESSION['step_ppedit_5']['textfield_action'] != 'delete' && isset($_SESSION['loaded_data']['texts']['text'])) {
-            if(isset($_SESSION['loaded_data']['texts']['text'][0])) {
-                foreach($_SESSION['loaded_data']['texts']['knowledge'] as $text) {
-                    $_SESSION['step_ppedit_15']['tf_text'][] = $text['body'];
-                    $_SESSION['step_ppedit_15']['tf_photo_alt_data'][] = $text['photo']['alt'];
-                    $_SESSION['step_ppedit_15']['tf_photo_src_data'][] = $text['photo']['url'];
-                    $_SESSION['step_ppedit_15']['tf_align_que'][] = $text['align'];
-                }
-            } else {
-                $text = $_SESSION['loaded_data']['texts']['text'];
-                $_SESSION['step_ppedit_15']['tf_text'][] = $text['body'];
-            }
+      if ($_SESSION['step_pp_5']['cv_knowledge_action'] != 'delete' && isset($data['cv']['personalSkills'])) {
+        $_SESSION['step_pp_14']['it_degree_cv_data'] = $data['cv']['personalSkills']['itSkills']['level'];
+        $_SESSION['step_pp_14']['it_detail_cv_data'] = $data['cv']['personalSkills']['itSkills']['description'];
+
+        $_SESSION['step_pp_14']['driver_cv_data'] = $data['cv']['personalSkills']['drivingLicence'];
+        $_SESSION['step_pp_14']['other_cv_data'] = $data['cv']['personalSkills']['otherInformation'];
+      }
+
+      // texty
+      if($_SESSION['step_pp_5']['textfield_action'] != 'delete' && isset($data['texts']['text'])) {
+        if(isset($data['texts']['text'][0])) {
+          foreach($data['texts']['knowledge'] as $text) {
+            $_SESSION['step_pp_15']['tf_text'][] = $text['body'];
+            $_SESSION['step_pp_15']['tf_photo_alt_data'][] = $text['photo']['alt'];
+            $_SESSION['step_pp_15']['tf_photo_src_data'][] = $text['photo']['url'];
+            $_SESSION['step_pp_15']['tf_align_que'][] = $text['align'];
+          }
+        } else {
+          $text = $data['texts']['text'];
+          $_SESSION['step_pp_15']['tf_text'][] = $text['body'];
         }
+      }
 
-        // odkazy
-        if($_SESSION['step_ppedit_5']['links_action'] != 'delete' && isset($_SESSION['loaded_data']['links']['link'])) {
-            if( isset($_SESSION['loaded_data']['links']['link'][0]) ) {
-                foreach ($_SESSION['loaded_data']['links']['link'] as $link) {
-                    $_SESSION['step_ppedit_16']['link_description_data'][] = $link['title'];
-                    $_SESSION['step_ppedit_16']['link_url_data'][] = $link['url'];
+      // odkazy
+      if($_SESSION['step_pp_5']['links_action'] != 'delete' && isset($data['links']['link'])) {
+        if( isset($data['links']['link'][0]) ) {
+          foreach ($data['links']['link'] as $link) {
+            $_SESSION['step_pp_16']['link_description_data'][] = $link['title'];
+            $_SESSION['step_pp_16']['link_url_data'][] = $link['url'];
 
-                }
-            } else {
-                $link = $_SESSION['loaded_data']['links']['link'];
+          }
+        } else {
+          $link = $data['links']['link'];
 
-                $_SESSION['step_ppedit_16']['link_description_data'][] = $link['title'];
-                $_SESSION['step_ppedit_16']['link_url_data'][] = $link['url'];
+          $_SESSION['step_pp_16']['link_description_data'][] = $link['title'];
+          $_SESSION['step_pp_16']['link_url_data'][] = $link['url'];
 
-            }
         }
-    }         
+      }
+    }
+   
 
 
                         

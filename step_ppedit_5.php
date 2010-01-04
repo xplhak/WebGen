@@ -24,6 +24,7 @@
     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
     OTHER DEALINGS IN THE SOFTWARE.
 */
+  
     
   $_page_title =  $step_desc[$language]." ".(array_search($_GET['step'], $_SESSION['steps'])+1)." - ".$webgen_edit_choice_title[$language];
 
@@ -43,29 +44,26 @@
   $_SESSION['loaded_data'] = loadNode(simplexml_load_file('./presentations/'.$_SESSION['step_all_2']['user_name'].'/'.$_SESSION['step_all_3']['edit_presentation_name'].'/'.$_SESSION['step_all_3']['edit_presentation_name'].'.xml')->personalPageData);
 
   // kvuli fci "zpet"
-  if (isset($_SESSION['step_ppedit_5_back'])) {
-    $_SESSION['step_ppedit_5'] = $_SESSION['step_ppedit_5_back'] ;
-  }
+  //if (isset($_SESSION['step_ppedit_5_back'])) {
+  //  $_SESSION['step_ppedit_5'] = $_SESSION['step_ppedit_5_back'] ;
+  //}
 
   // spracovanie formulara
   if (count($_POST)) {
         // sem spracovanie/osetrenie prislich premennych
         $_SESSION['steps']  = array('1', '2', '3', '4','5','6');
         
-        // zkopirovani nazvu prezentace pro potreby generovani
-        
-        $_SESSION['step_all_4']['presentation_name'] = $_SESSION['step_all_3']['edit_presentation_name']; 
-        
         // smazani obsahu nevyplnenych promennych
         
         $_SESSION['step_ppedit_5'] = array();
         $_SESSION['step_ppedit_5'] = $_POST;
-        $_SESSION['step_ppedit_5_back'] = $_POST;
+        $_SESSION['step_pp_5'] = $_POST;
+        //$_SESSION['step_ppedit_5_back'] = $_POST;
 
         
-        foreach($_SESSION['step_ppedit_5'] as $key => $val) {
-          if ($_SESSION['step_ppedit_5']["{$key}_action"] == 'delete') {
-            unset($_SESSION['step_ppedit_5'][$key]);
+        foreach($_SESSION['step_pp_5'] as $key => $val) {
+          if ($_SESSION['step_pp_5']["{$key}_action"] == 'delete') {
+            unset($_SESSION['step_pp_5'][$key]);
           }
         } 
          
@@ -87,12 +85,12 @@
             '16' => 'links',
           );
 
-        unset($_SESSION["step_ppedit_6"]);
+        unset($_SESSION["step_ppedit_6"]); // hmm coto je ?
 
         foreach ($choices as $key => $val) {
-          unset($_SESSION["step_ppedit_$key"]); // smazani sessions ..
+          unset($_SESSION["step_pp_$key"]); // smazani sessions ..
 
-          if ( isset($_SESSION['step_ppedit_5'][$val]) && $_SESSION['step_ppedit_5']["{$val}_action"] != 'delete') {
+          if ( isset($_SESSION['step_pp_5'][$val]) && $_SESSION['step_pp_5']["{$val}_action"] != 'delete') {
               array_push ($_SESSION['steps'], $key);
           }
         }
@@ -101,7 +99,7 @@
         array_push ($_SESSION['steps'], '20');
         array_push ($_SESSION['steps'], '21');
 
-        loadToSession();
+        loadToSession($_SESSION['loaded_data']);
         unset($_SESSION['loaded_data']);
     }
     
@@ -214,7 +212,7 @@
         echo "   <input type='checkbox' value='yes' name='$field'";
         if (isset($_SESSION['step_ppedit_5'][$field])) { echo " checked=\"checked\" "; }
         if (isset($details['choices'])) {
-          echo " onclick=\"show_action_choice(this,'{$field}_action')\"";
+          echo " onclick=\"return show_action_choice(this,'{$field}_action')\"";
         }
         if (isset($details['subfields'])) {
           echo " onclick=\"pack_choice('$pack','$unpack','$field')\"";
@@ -227,7 +225,7 @@
         $display = "";
         if (isset($details['choices'])) {
           if (!isset($_SESSION['step_ppedit_5'][$field])) {$display = "style='display:none'";}
-          echo "<select id='{$field}_action' name='{$field}_action' $display>";
+          echo "<select onclick=\"action_select=true;\" id='{$field}_action' name='{$field}_action' $display>";
           if (isset($details['choices'])) {
             foreach($details['choices'] as $key => $value) {
               $selected = "";
@@ -248,15 +246,15 @@
               echo "<li><label>";
               echo "<input type='checkbox' value='yes' name='{$field}_{$subfield}'";
               if (isset($_SESSION['step_ppedit_5']["{$field}_{$subfield}"])) { echo " checked=\"checked\" "; }
-              echo " onclick=\"show_action_choice(this,'{$field}_{$subfield}_action')\"";
+              echo " onclick=\"return show_action_choice(this,'{$field}_{$subfield}_action');\"";
               echo " /> ".translate("webgen_choice_{$field}_{$subfield}");
               $display = "";
               if (!isset($_SESSION['step_ppedit_5']["{$field}_{$subfield}"])) {$display = "style='display:none'";}
-              echo "<select id='{$field}_{$subfield}_action' name='{$field}_{$subfield}_action' $display>";
+              echo "<select onclick=\"action_select=true;\" id='{$field}_{$subfield}_action' name='{$field}_{$subfield}_action' $display>";
               foreach($options as $key => $value) {
                 $selected = "";
                 if($_SESSION['step_ppedit_5']["{$field}_{$subfield}_action"] == $key) { $selected = "selected"; }
-                echo "<option value='$key' {$selected}>{$value}</option>";
+                echo "<option  value='$key' {$selected}>{$value}</option>";
               }
               echo "</select>";
 
@@ -375,7 +373,7 @@
       ),
       'firm' => array(
         'subfields' => array(
-          'firmname' => array('edit'=>translate('webgen_edit_edit'),'delete'=>translate('webgen_edit_delete')),
+          'firmname' => array('edit'=>translate('webgen_edit_edit')),
           'ic' => array('edit'=>translate('webgen_edit_edit'),'delete'=>translate('webgen_edit_delete')),
           'direction' => array('edit'=>translate('webgen_edit_edit'),'delete'=>translate('webgen_edit_delete')),
           'workload' => array('edit'=>translate('webgen_edit_edit'),'delete'=>translate('webgen_edit_delete')),

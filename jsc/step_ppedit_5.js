@@ -23,6 +23,8 @@
     OTHER DEALINGS IN THE SOFTWARE.
 */
 
+var action_select = false;
+
 function pack_choice(check, uncheck, type) {
     if ($("#"+type+"_pack_info").html() == uncheck) {
         $("#"+type+"_pack_info").html(check);
@@ -35,7 +37,13 @@ function pack_choice(check, uncheck, type) {
 }
 
 function show_action_choice(checkbox,select_id) {
-  $('#'+select_id).toggle();
-  $('#'+select_id+" option:first").attr('selected','selected');
+  if(!action_select) {
+    $('#'+select_id).toggle();
+    $('#'+select_id+" option:first").attr('selected','selected');
+    return true;
+  } else {
+    action_select = false;
+    return false;
+  }
 }
- 
+
