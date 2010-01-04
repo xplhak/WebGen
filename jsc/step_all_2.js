@@ -30,18 +30,15 @@ $(document).ready(function(){
   }
 });
 
-
-
 function add_pass(str) {
     $("#li_pass_repeat").hide();
     $("#li_css_change").show();
     
     if ($("#css_change:checked").val() != 'on') {
         $("#div_css_choice").hide();
-    } 
+    }
     
     $("#span_user_name").html(str);
-    $("#li_css_change").hide();
 }
 
 function remove_pass(str) {

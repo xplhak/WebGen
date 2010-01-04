@@ -255,7 +255,7 @@
     function getUrl($user, $pres, $fname) {
         if (getenv("SERVER_NAME") == "localhost") {
                     
-            $url = "http://".getenv("SERVER_NAME").":8888/local/presentations/".$user."/".$pres."/".$pres.".php";
+            $url = "http://".getenv("SERVER_NAME").":8888/WebGen/presentations/".$user."/".$pres."/".$pres.".php";
                 
         } else {
                 
