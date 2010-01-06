@@ -28,7 +28,7 @@
 */
 -->
 
-<xsl:output indent="yes" method="xml" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" encoding="utf-8" media-type="text/html"/>
+<xsl:output omit-xml-declaration="yes" indent="yes" method="xml" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" encoding="utf-8" media-type="text/html"/>s
 
 <xsl:template match="/">   
     <html>
