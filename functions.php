@@ -407,6 +407,19 @@
     
     }
     
+    //
+    function deleteXmlHeading($file) {
+        //read the entire string
+        $str=implode("\n",file($file));
+    
+        $fp=fopen($file,'w');
+        //replace something in the file string - this is a VERY simple example
+        $str=str_replace("<?xml version=\"1.0\"","<<?php "."?".">"."?xml version=\"1.0\"",$str);
+    
+        //now, TOTALLY rewrite the file
+        fwrite($fp,$str,strlen($str));
+    }
+    
     // nasteni dat z XML - J. Uhyrek
  function loadToSession($data) {
 

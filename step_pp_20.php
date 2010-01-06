@@ -1016,16 +1016,21 @@
                         copy("./apps/gb_cz/gb.css", $dirname."/page_files/gb.css");
                         copy("./apps/gb_cz/gb.js", $dirname."/page_files/gb.js");
                         copy("./apps/gb_cz/gb_add.php", $dirname."/page_files/gb_add.php");
-                        copy("./apps/gb_cz/gb_data.txt", $dirname."/page_files/gb_data.txt");
+                        if (!file_exists($dirname."/page_files/gb_data.txt")) {
+                            copy("./apps/gb_cz/gb_data.txt", $dirname."/page_files/gb_data.txt");
+                        }
+                    
                     } else {
                         copy("./apps/gb_en/gb.php", $dirname."/page_files/gb.php");
                         copy("./apps/gb_en/gb.css", $dirname."/page_files/gb.css");
                         copy("./apps/gb_en/gb.js", $dirname."/page_files/gb.js");
                         copy("./apps/gb_en/gb_add.php", $dirname."/page_files/gb_add.php");
-                        copy("./apps/gb_en/gb_data.txt", $dirname."/page_files/gb_data.txt");                    
+                        if (!file_exists($dirname."/page_files/gb_data.txt")) {
+                            copy("./apps/gb_en/gb_data.txt", $dirname."/page_files/gb_data.txt");
+                        }                    
                     }                 
                     
-                    chmod($dirname."/page_files/gb.php", 0777);
+                    chmod($dirname."/page_files/gb.php", 0744);
                     chmod($dirname."/page_files/gb.css", 0777);
                     chmod($dirname."/page_files/gb.js", 0777);
                     chmod($dirname."/page_files/gb_add.php", 0777);
@@ -1299,7 +1304,16 @@
     // provedení transformace a vypsání výsledku
 
     $newdom = $proc->transformToDoc($xml);
-    $newdom->save($dirname."/page_files/center.php");    
+    $newdom->save($dirname."/page_files/center.php");
+    
+    deleteXmlHeading($dirname."/".$_SESSION['step_all_4']['presentation_name'].".php");
+    deleteXmlHeading($dirname."/page_files/center.php");
+    
+    chmod($dirname."/".$_SESSION['step_all_4']['presentation_name'].".php", 0744);
+    chmod($dirname."/page_files/center.php", 0744);
+    
+    
+      
     
 // ****************** PROVEDENI XSL TRANFORMACE ZIVOTOPIS *******************************************
     
@@ -1324,6 +1338,10 @@
     
         $newdom = $proc->transformToDoc($xml);
         $newdom->save($dirname."/page_files/cv.php"); 
+        
+        deleteXmlHeading($dirname."/page_files/cv.php");
+        
+        chmod($dirname."/page_files/cv.php", 0744); 
         
     
     // ****************** Kopirovani souboru pro zivotopis **********************************************

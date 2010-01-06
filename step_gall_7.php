@@ -207,7 +207,11 @@
     // provedení transformace a vypsání výsledku
 
     $newdom = $proc->transformToDoc($xml);
-    $newdom->save($dirname."/".$_SESSION['step_all_4']['presentation_name'].".html"); 
+    $newdom->save($dirname."/".$_SESSION['step_all_4']['presentation_name'].".php");
+    
+    deleteXmlHeading($dirname."/".$_SESSION['step_all_4']['presentation_name'].".php");
+
+    chmod($dirname."/".$_SESSION['step_all_4']['presentation_name'].".php", 0744);
 
 
 // ***************** ZJISTI URL VYSLEDNE STRANKY ****************************************************

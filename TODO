@@ -1,14 +1,5 @@
 Dodělat:
 
-- heslo
-    - delka alespon tri znaky
-    - pokud se vracim (a jsem uspesne prihlaseny) tak misto moznosti registrace bude vybrana moznost prihlaseni se vsim co s tim souvisi (neni zoberazena moznost opakovani hesla, vyber stylu jen kdyz je zaskrtly prislusny checkbox, kontrola chzbovych hlasek, ...)
-    - pri vytvoreni profilu by se mel vytvorit adresar pro daneho uzivatele
-
-
-
-- nahrát na GITHUB
-    - začít verzovat
 - dlouhý textfield
     - echo nekopíruje vstup (enter)
     - dlouhý řetězec bez mezery (pozor i ve vygenerované stránce)
@@ -27,6 +18,8 @@ Dodělat:
 - u ICQ a podobnych cisel udelat pomlcku mezi trojicema cisel (u ICQ OK), promyslet, kde by podobna kontrola byla take potreba
 - kontrola ze rok ukonceni je pozdeji nez rok zacatku
 - validace pomocí regulárních výrázů
+- nápověda (step_ppedit_4 na step_ppedit_5)
+- umoznit editovat nazev prezentace
 
 
 - generování aplikací
