@@ -52,11 +52,21 @@
             // preskoceni 4teho kroku u editace
             $_SESSION['steps'] = array('1', '2', '3', '5');
             
+            
+            
+            
             // zde jeste zjistime typ prezentace - a podle toho zmenit typ editace 
     
            $xml = simplexml_load_file('./presentations/'.$_SESSION['step_all_2']['user_name'].'/'.$_SESSION['step_all_3']['edit_presentation_name'].'/'.$_SESSION['step_all_3']['edit_presentation_name'].'.xml');       
            
             $next_type = $xml->attributes()->presentationType."edit";  
+            $name = $xml->attributes()->presentationName."";
+            $full_name = $xml->attributes()->presentationFullName."";
+            
+            
+            //ulozeni nazvu promennych
+            $_SESSION['step_all_4']['presentation_name'] = $name;
+            $_SESSION['step_all_4']['presentation_full_name'] = $full_name;
         } 
         elseif ($_SESSION['step_all_3']['action'] == 'delete') {
             $_SESSION['steps'] = array('1', '2', '3', '4', '5');
@@ -89,7 +99,15 @@
             // promenna exist_and_filled urcuje, zda adresar uzivatele jiz existuje a zda jiz obsauje nejake prezentace
             if (file_exists('./presentations/'.$_SESSION['step_all_2']['user_name']) && fileCount('./presentations/'.$_SESSION['step_all_2']['user_name']) > 0) { $exist_and_filled = true; } else { $exist_and_filled = false; }
             
-            if ($exist_and_filled) {
+            if (!$exist_and_filled) {
+                // pokud neni nic k editovani, tak rovnou k vyberu typu prezentace
+                $_SESSION['step_all_3']['action'] = 'new';
+                
+                $next_step = $_SESSION['steps'][array_search($_GET['step'], $_SESSION['steps']) + 1];
+                $next_type = $_GET['type'];
+                header("Location: ./index.php?step={$next_step}&type={$next_type}");
+                exit(); 
+            }
         
         ?>
         <li>
@@ -98,11 +116,7 @@
                 <?php echo $webgen_action_edit[$language] ?>
             </label>
         </li>             
-        <?php
-        
-            }
-        
-        ?>
+
         <ul id="presentation_list1" class="clear" <?php if ($_SESSION['step_all_3']['action'] != 'edit' && isset($_SESSION['step_all_3']['action'])) { echo "style=\"display: none;\""; } ?> >
                 <?php
                     
@@ -118,22 +132,13 @@
             </label>
         </li>
         
-        <?php
-        
-            if ($exist_and_filled) {
-        
-        ?> 
         <li>
             <label>
                 <input type="radio" name="action" value="delete" <?php if ($_SESSION['step_all_3']['action'] == 'delete') { echo "checked=\"checked\""; } ?> onclick="show_pres2_names('<?php echo $webgen_action_presentation_delete_error[$language]."', '".$webgen_action_delete_info[$language]."', '".$submit_button_info[$language]; ?> ')" />
                 <?php echo $webgen_action_delete[$language] ?>
             </label>
         </li> 
-        <?php
-        
-            }
-        
-        ?> 
+
         <ul id="presentation_list2" class="clear" <?php if ($_SESSION['step_all_3']['action'] != 'delete') { echo "style=\"display: none;\""; } ?>>
                 <?php
                     
