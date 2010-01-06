@@ -214,12 +214,10 @@ h1, h2, h3 {
 }
 
 .left_text {
-    min-height: 100 px;
     margin: 30px 0 50px 0;
 }
 
 .right_text {
-    min-height: 100 px;
     margin: 30px 0 50px 0;
 }
 
